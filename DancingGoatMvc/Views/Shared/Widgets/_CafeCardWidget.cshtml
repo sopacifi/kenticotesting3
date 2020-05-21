@@ -1,0 +1,16 @@
+﻿@model DancingGoat.Models.Widgets.CafeCardViewModel
+
+<div>
+    @if (String.IsNullOrEmpty(Model.Name) && (Model.Photo == null))
+    {
+        <h2>@ResHelper.GetString("dancinggoatmvc.widget.cafecard.nocafeselected")</h2>
+    }
+    else
+    {
+        <a href="@Url.Action("Index", "Cafes")" class="ourcoffee-tile-link">
+            <h2 class="ourcoffee-tile-text center-text">@Model.Name</h2>
+            <span class="cafe-overlay"> </span>
+            @Html.AttachmentImage(Model.Photo, Model.Name, "ourcoffee-tile-image")
+        </a>
+    }
+</div>

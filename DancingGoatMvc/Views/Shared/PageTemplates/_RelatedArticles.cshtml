@@ -1,0 +1,28 @@
+﻿@model IEnumerable<DancingGoat.Models.PageTemplates.RelatedArticleViewModel>
+@if (Model.Any())
+{
+    <div class=" article-related-articles">
+        <h1 class="title-tab">@ResHelper.GetString("DancingGoatMvc.Articles.RelatedArticles")</h1>
+        <div class="row">
+            @foreach (var article in Model)
+            {
+                <div class="article-tile @(article.HandleArticlePosition ? "col-lg-3 col-md-6 col-sm-12" : "")">
+                    <a href="@Url.ForArticle(article.NodeGUID, article.NodeAlias)">
+                        @Html.AttachmentImage(article.Teaser, "Article " + article.Title, "article-tile-image", SizeConstraint.Height(301))
+                    </a>
+                    <div class="article-tile-date">
+                        @article.PublicationDate.ToString("m")
+                    </div>
+                    <div class="article-tile-content">
+                        <h2 class="h4">
+                            <a href="@Url.ForArticle(article.NodeGUID, article.NodeAlias)">@article.Title </a>
+                        </h2>
+                        <p class="article-tile-text">
+                            @article.Summary
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
