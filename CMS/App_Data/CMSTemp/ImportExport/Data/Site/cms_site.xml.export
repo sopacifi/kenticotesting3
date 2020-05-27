@@ -1,0 +1,18 @@
+﻿<cms_site version="12.0">
+  <NewDataSet>
+    <cms_site>
+      <SiteID>1</SiteID>
+      <SiteName>DancingGoatMvc</SiteName>
+      <SiteDisplayName>Dancing Goat MVC</SiteDisplayName>
+      <SiteDescription>MVC demo web site</SiteDescription>
+      <SiteStatus>RUNNING</SiteStatus>
+      <SiteDomainName>localhost:8080</SiteDomainName>
+      <SiteGUID>e0d2e241-74a9-45f5-9778-3c9b24be1a06</SiteGUID>
+      <SiteLastModified>2020-05-21T15:04:30.285892-05:00</SiteLastModified>
+      <SiteIsOffline>false</SiteIsOffline>
+      <SiteOfflineMessage></SiteOfflineMessage>
+      <SitePresentationURL>http://localhost:8080/Kentico12_DancingGoatMvc</SitePresentationURL>
+      <SiteIsContentOnly>true</SiteIsContentOnly>
+    </cms_site>
+  </NewDataSet>
+</cms_site>

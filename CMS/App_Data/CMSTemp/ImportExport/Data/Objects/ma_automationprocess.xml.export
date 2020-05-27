@@ -1,0 +1,275 @@
+﻿<ma_automationprocess version="12.0">
+  <NewDataSet>
+    <cms_workflow>
+      <WorkflowID>214</WorkflowID>
+      <WorkflowDisplayName>Send 'Coffee 101' lessons (Dancing Goat MVC)</WorkflowDisplayName>
+      <WorkflowName>DancingGoatMvc.SendCoffeeLessons</WorkflowName>
+      <WorkflowGUID>521a837e-22c6-455a-be66-390744d564a9</WorkflowGUID>
+      <WorkflowLastModified>2019-06-25T03:08:39.7817062-05:00</WorkflowLastModified>
+      <WorkflowAutoPublishChanges>false</WorkflowAutoPublishChanges>
+      <WorkflowType>3</WorkflowType>
+      <WorkflowSendApproveEmails>true</WorkflowSendApproveEmails>
+      <WorkflowSendRejectEmails>true</WorkflowSendRejectEmails>
+      <WorkflowSendPublishEmails>true</WorkflowSendPublishEmails>
+      <WorkflowSendArchiveEmails>true</WorkflowSendArchiveEmails>
+      <WorkflowSendReadyForApprovalEmails>true</WorkflowSendReadyForApprovalEmails>
+      <WorkflowAllowedObjects>;om.contact;</WorkflowAllowedObjects>
+      <WorkflowRecurrenceType>2</WorkflowRecurrenceType>
+      <WorkflowEnabled>true</WorkflowEnabled>
+    </cms_workflow>
+    <cms_objectworkflowtrigger>
+      <TriggerID>1</TriggerID>
+      <TriggerGUID>fa736322-474c-4b9e-bd72-420384eb17a6</TriggerGUID>
+      <TriggerLastModified>2019-06-25T03:08:39.7817062-05:00</TriggerLastModified>
+      <TriggerType>0</TriggerType>
+      <TriggerMacroCondition>{%Rule("(Activity.LinkedToObject(\"newsletter.newsletter\", \"DancingGoatMvcNewsletter\"))", "&lt;rules&gt;&lt;r pos=\"0\" par=\"\" op=\"and\" n=\"CMSActivityNewsletterSubscriptionPerformedForNewsletter\" &gt;&lt;p n=\"_was\"&gt;&lt;t&gt;was&lt;/t&gt;&lt;v&gt;&lt;/v&gt;&lt;r&gt;0&lt;/r&gt;&lt;d&gt;select operation&lt;/d&gt;&lt;vt&gt;text&lt;/vt&gt;&lt;tv&gt;0&lt;/tv&gt;&lt;/p&gt;&lt;p n=\"newsletter\"&gt;&lt;t&gt;MVC Dancing goat newsletter&lt;/t&gt;&lt;v&gt;DancingGoatMvcNewsletter&lt;/v&gt;&lt;r&gt;1&lt;/r&gt;&lt;d&gt;{$macro.selector.newsletter$}&lt;/d&gt;&lt;vt&gt;text&lt;/vt&gt;&lt;tv&gt;0&lt;/tv&gt;&lt;/p&gt;&lt;/r&gt;&lt;/rules&gt;")|(identity)GlobalAdministrator|(hash)9a1c8cce3860ea3466b5d7103f2fba5df1d34441bef8a65c556a330c6270caa3%}</TriggerMacroCondition>
+      <TriggerWorkflowID>214</TriggerWorkflowID>
+      <TriggerDisplayName>Contact subscribed to 'MVC Dancing goat newsletter'</TriggerDisplayName>
+      <TriggerObjectType>om.activity</TriggerObjectType>
+      <TriggerTargetObjectType>om.activitytype</TriggerTargetObjectType>
+      <TriggerTargetObjectID>50</TriggerTargetObjectID>
+    </cms_objectworkflowtrigger>
+    <cms_workflowstep>
+      <StepID>5887</StepID>
+      <StepDisplayName>Send 'Lesson 1'</StepDisplayName>
+      <StepName>SendCampaignEmail</StepName>
+      <StepWorkflowID>214</StepWorkflowID>
+      <StepGUID>bf946444-ad82-4648-aba2-0d091bdcd0f6</StepGUID>
+      <StepLastModified>2019-06-25T03:08:33.9333933-05:00</StepLastModified>
+      <StepType>11</StepType>
+      <StepDefinition>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Step xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;TimeoutEnabled&gt;false&lt;/TimeoutEnabled&gt;
+  &lt;TimeoutTarget&gt;00000000-0000-0000-0000-000000000000&lt;/TimeoutTarget&gt;
+  &lt;SourcePoints&gt;
+    &lt;SourcePoint Guid="51b442ac-906d-4307-b9af-1465306e857f"&gt;
+      &lt;Label&gt;Default&lt;/Label&gt;
+      &lt;Type&gt;0&lt;/Type&gt;
+      &lt;StepRolesSecurity&gt;0&lt;/StepRolesSecurity&gt;
+      &lt;StepUsersSecurity&gt;0&lt;/StepUsersSecurity&gt;
+    &lt;/SourcePoint&gt;
+  &lt;/SourcePoints&gt;
+  &lt;Position&gt;
+    &lt;X&gt;550&lt;/X&gt;
+    &lt;Y&gt;2570&lt;/Y&gt;
+  &lt;/Position&gt;
+&lt;/Step&gt;</StepDefinition>
+      <StepRolesSecurity>0</StepRolesSecurity>
+      <StepUsersSecurity>0</StepUsersSecurity>
+      <StepSendEmails>false</StepSendEmails>
+      <StepActionID>136</StepActionID>
+      <StepActionParameters>&lt;Parameters&gt;&lt;Newsletter&gt;4c6de47c-86fc-4919-b89d-2f248ec60fed&lt;/Newsletter&gt;&lt;newsletterissue&gt;ffae8a3b-8b35-417f-b00f-3f59e79c29fb&lt;/newsletterissue&gt;&lt;Site&gt;DancingGoatMvc&lt;/Site&gt;&lt;/Parameters&gt;</StepActionParameters>
+      <StepWorkflowType>3</StepWorkflowType>
+    </cms_workflowstep>
+    <cms_workflowstep>
+      <StepID>5888</StepID>
+      <StepDisplayName>Wait 1 day</StepDisplayName>
+      <StepName>Wait_1</StepName>
+      <StepWorkflowID>214</StepWorkflowID>
+      <StepGUID>b50a66db-3034-48e3-91db-347be60620b7</StepGUID>
+      <StepLastModified>2019-06-25T03:08:34.0739373-05:00</StepLastModified>
+      <StepType>10</StepType>
+      <StepAllowReject>true</StepAllowReject>
+      <StepDefinition>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Step xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;TimeoutEnabled&gt;true&lt;/TimeoutEnabled&gt;
+  &lt;TimeoutInterval&gt;minute;1/1/0001 12:00:00 AM;1;00:00:00;23:59:59.9999999;Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday&lt;/TimeoutInterval&gt;
+  &lt;TimeoutTarget&gt;00000000-0000-0000-0000-000000000000&lt;/TimeoutTarget&gt;
+  &lt;SourcePoints&gt;
+    &lt;SourcePoint Guid="5490b925-4981-4236-b6fe-c65f11d37597"&gt;
+      &lt;Label&gt;Default&lt;/Label&gt;
+      &lt;Text /&gt;
+      &lt;Tooltip /&gt;
+      &lt;Condition /&gt;
+      &lt;Type&gt;0&lt;/Type&gt;
+      &lt;StepRolesSecurity&gt;0&lt;/StepRolesSecurity&gt;
+      &lt;StepUsersSecurity&gt;0&lt;/StepUsersSecurity&gt;
+    &lt;/SourcePoint&gt;
+  &lt;/SourcePoints&gt;
+  &lt;Position&gt;
+    &lt;X&gt;320&lt;/X&gt;
+    &lt;Y&gt;2570&lt;/Y&gt;
+  &lt;/Position&gt;
+&lt;/Step&gt;</StepDefinition>
+      <StepRolesSecurity>0</StepRolesSecurity>
+      <StepUsersSecurity>0</StepUsersSecurity>
+      <StepSendEmails>false</StepSendEmails>
+      <StepActionParameters></StepActionParameters>
+      <StepWorkflowType>3</StepWorkflowType>
+    </cms_workflowstep>
+    <cms_workflowstep>
+      <StepID>5889</StepID>
+      <StepDisplayName>Subscribed to the newsletter</StepDisplayName>
+      <StepName>start</StepName>
+      <StepWorkflowID>214</StepWorkflowID>
+      <StepGUID>78ffed85-9015-4fb0-8e39-3a1d574d9337</StepGUID>
+      <StepLastModified>2019-06-25T03:08:33.9958139-05:00</StepLastModified>
+      <StepType>1</StepType>
+      <StepAllowReject>false</StepAllowReject>
+      <StepDefinition>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Step xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;TimeoutEnabled&gt;false&lt;/TimeoutEnabled&gt;
+  &lt;TimeoutTarget&gt;00000000-0000-0000-0000-000000000000&lt;/TimeoutTarget&gt;
+  &lt;SourcePoints&gt;
+    &lt;SourcePoint Guid="f2f788ba-35e0-4bbb-816b-b65ecf548c5e"&gt;
+      &lt;Label&gt;Default&lt;/Label&gt;
+      &lt;Type&gt;0&lt;/Type&gt;
+      &lt;StepRolesSecurity&gt;0&lt;/StepRolesSecurity&gt;
+      &lt;StepUsersSecurity&gt;0&lt;/StepUsersSecurity&gt;
+    &lt;/SourcePoint&gt;
+  &lt;/SourcePoints&gt;
+  &lt;Position&gt;
+    &lt;X&gt;50&lt;/X&gt;
+    &lt;Y&gt;2570&lt;/Y&gt;
+  &lt;/Position&gt;
+&lt;/Step&gt;</StepDefinition>
+      <StepRolesSecurity>0</StepRolesSecurity>
+      <StepUsersSecurity>0</StepUsersSecurity>
+      <StepActionParameters></StepActionParameters>
+      <StepWorkflowType>3</StepWorkflowType>
+    </cms_workflowstep>
+    <cms_workflowstep>
+      <StepID>5890</StepID>
+      <StepDisplayName>Wait 2 days</StepDisplayName>
+      <StepName>Wait</StepName>
+      <StepWorkflowID>214</StepWorkflowID>
+      <StepGUID>4f258c6d-0c28-49e4-bc31-58c0a05b7356</StepGUID>
+      <StepLastModified>2019-06-25T03:08:34.0305832-05:00</StepLastModified>
+      <StepType>10</StepType>
+      <StepAllowReject>true</StepAllowReject>
+      <StepDefinition>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Step xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;TimeoutEnabled&gt;true&lt;/TimeoutEnabled&gt;
+  &lt;TimeoutInterval&gt;minute;1/1/0001 12:00:00 AM;1;00:00:00;23:59:59.9999999;Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday&lt;/TimeoutInterval&gt;
+  &lt;TimeoutTarget&gt;00000000-0000-0000-0000-000000000000&lt;/TimeoutTarget&gt;
+  &lt;SourcePoints&gt;
+    &lt;SourcePoint Guid="9f5226d8-e200-4699-adb2-3f9199c7bb1f"&gt;
+      &lt;Label&gt;Default&lt;/Label&gt;
+      &lt;Text /&gt;
+      &lt;Tooltip /&gt;
+      &lt;Condition /&gt;
+      &lt;Type&gt;0&lt;/Type&gt;
+      &lt;StepRolesSecurity&gt;0&lt;/StepRolesSecurity&gt;
+      &lt;StepUsersSecurity&gt;0&lt;/StepUsersSecurity&gt;
+    &lt;/SourcePoint&gt;
+  &lt;/SourcePoints&gt;
+  &lt;Position&gt;
+    &lt;X&gt;780&lt;/X&gt;
+    &lt;Y&gt;2570&lt;/Y&gt;
+  &lt;/Position&gt;
+&lt;/Step&gt;</StepDefinition>
+      <StepRolesSecurity>0</StepRolesSecurity>
+      <StepUsersSecurity>0</StepUsersSecurity>
+      <StepSendEmails>false</StepSendEmails>
+      <StepActionParameters></StepActionParameters>
+      <StepWorkflowType>3</StepWorkflowType>
+    </cms_workflowstep>
+    <cms_workflowstep>
+      <StepID>5891</StepID>
+      <StepDisplayName>Send 'Lesson 2'</StepDisplayName>
+      <StepName>SendCampaignEmail_1</StepName>
+      <StepWorkflowID>214</StepWorkflowID>
+      <StepGUID>c1eefde9-29b8-460b-91ee-ef80fa6ee6c0</StepGUID>
+      <StepLastModified>2019-06-25T03:08:33.886444-05:00</StepLastModified>
+      <StepType>11</StepType>
+      <StepDefinition>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Step xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;TimeoutEnabled&gt;false&lt;/TimeoutEnabled&gt;
+  &lt;TimeoutTarget&gt;00000000-0000-0000-0000-000000000000&lt;/TimeoutTarget&gt;
+  &lt;SourcePoints&gt;
+    &lt;SourcePoint Guid="876a470a-1ccf-43e5-ae46-0e2c86d3e82e"&gt;
+      &lt;Label&gt;Default&lt;/Label&gt;
+      &lt;Type&gt;0&lt;/Type&gt;
+      &lt;StepRolesSecurity&gt;0&lt;/StepRolesSecurity&gt;
+      &lt;StepUsersSecurity&gt;0&lt;/StepUsersSecurity&gt;
+    &lt;/SourcePoint&gt;
+  &lt;/SourcePoints&gt;
+  &lt;Position&gt;
+    &lt;X&gt;1010&lt;/X&gt;
+    &lt;Y&gt;2570&lt;/Y&gt;
+  &lt;/Position&gt;
+&lt;/Step&gt;</StepDefinition>
+      <StepRolesSecurity>0</StepRolesSecurity>
+      <StepUsersSecurity>0</StepUsersSecurity>
+      <StepSendEmails>false</StepSendEmails>
+      <StepActionID>136</StepActionID>
+      <StepActionParameters>&lt;Parameters&gt;&lt;Newsletter&gt;4c6de47c-86fc-4919-b89d-2f248ec60fed&lt;/Newsletter&gt;&lt;newsletterissue&gt;5fff55af-fef4-4544-8fc0-4cd1778db0eb&lt;/newsletterissue&gt;&lt;Site&gt;DancingGoatMvc&lt;/Site&gt;&lt;/Parameters&gt;</StepActionParameters>
+      <StepWorkflowType>3</StepWorkflowType>
+    </cms_workflowstep>
+    <cms_workflowstep>
+      <StepID>5892</StepID>
+      <StepDisplayName>Finished</StepDisplayName>
+      <StepName>finished</StepName>
+      <StepWorkflowID>214</StepWorkflowID>
+      <StepGUID>e7712090-ee3f-408c-b750-f33d7a6a99d7</StepGUID>
+      <StepLastModified>2019-06-25T03:08:33.4645828-05:00</StepLastModified>
+      <StepType>99</StepType>
+      <StepAllowReject>false</StepAllowReject>
+      <StepDefinition>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Step xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;TimeoutEnabled&gt;false&lt;/TimeoutEnabled&gt;
+  &lt;TimeoutTarget&gt;00000000-0000-0000-0000-000000000000&lt;/TimeoutTarget&gt;
+  &lt;SourcePoints /&gt;
+  &lt;DefinitionPoint Guid="10e954d7-1a77-4a11-a5a2-b57db8ce91c5"&gt;
+    &lt;Label&gt;Default&lt;/Label&gt;
+    &lt;Type&gt;0&lt;/Type&gt;
+    &lt;StepRolesSecurity&gt;0&lt;/StepRolesSecurity&gt;
+    &lt;StepUsersSecurity&gt;0&lt;/StepUsersSecurity&gt;
+  &lt;/DefinitionPoint&gt;
+  &lt;Position&gt;
+    &lt;X&gt;1250&lt;/X&gt;
+    &lt;Y&gt;2570&lt;/Y&gt;
+  &lt;/Position&gt;
+&lt;/Step&gt;</StepDefinition>
+      <StepRolesSecurity>0</StepRolesSecurity>
+      <StepUsersSecurity>0</StepUsersSecurity>
+      <StepActionParameters></StepActionParameters>
+      <StepWorkflowType>3</StepWorkflowType>
+    </cms_workflowstep>
+    <cms_workflowtransition>
+      <TransitionID>1794</TransitionID>
+      <TransitionStartStepID>5887</TransitionStartStepID>
+      <TransitionEndStepID>5890</TransitionEndStepID>
+      <TransitionType>1</TransitionType>
+      <TransitionLastModified>2019-06-25T03:08:33.91772-05:00</TransitionLastModified>
+      <TransitionSourcePointGUID>51b442ac-906d-4307-b9af-1465306e857f</TransitionSourcePointGUID>
+      <TransitionWorkflowID>214</TransitionWorkflowID>
+    </cms_workflowtransition>
+    <cms_workflowtransition>
+      <TransitionID>1792</TransitionID>
+      <TransitionStartStepID>5888</TransitionStartStepID>
+      <TransitionEndStepID>5887</TransitionEndStepID>
+      <TransitionType>1</TransitionType>
+      <TransitionLastModified>2019-06-25T03:08:34.042693-05:00</TransitionLastModified>
+      <TransitionSourcePointGUID>5490b925-4981-4236-b6fe-c65f11d37597</TransitionSourcePointGUID>
+      <TransitionWorkflowID>214</TransitionWorkflowID>
+    </cms_workflowtransition>
+    <cms_workflowtransition>
+      <TransitionID>1793</TransitionID>
+      <TransitionStartStepID>5889</TransitionStartStepID>
+      <TransitionEndStepID>5888</TransitionEndStepID>
+      <TransitionType>1</TransitionType>
+      <TransitionLastModified>2019-06-25T03:08:33.964566-05:00</TransitionLastModified>
+      <TransitionSourcePointGUID>f2f788ba-35e0-4bbb-816b-b65ecf548c5e</TransitionSourcePointGUID>
+      <TransitionWorkflowID>214</TransitionWorkflowID>
+    </cms_workflowtransition>
+    <cms_workflowtransition>
+      <TransitionID>1795</TransitionID>
+      <TransitionStartStepID>5890</TransitionStartStepID>
+      <TransitionEndStepID>5891</TransitionEndStepID>
+      <TransitionType>1</TransitionType>
+      <TransitionLastModified>2019-06-25T03:08:34.011439-05:00</TransitionLastModified>
+      <TransitionSourcePointGUID>9f5226d8-e200-4699-adb2-3f9199c7bb1f</TransitionSourcePointGUID>
+      <TransitionWorkflowID>214</TransitionWorkflowID>
+    </cms_workflowtransition>
+    <cms_workflowtransition>
+      <TransitionID>1796</TransitionID>
+      <TransitionStartStepID>5891</TransitionStartStepID>
+      <TransitionEndStepID>5892</TransitionEndStepID>
+      <TransitionType>1</TransitionType>
+      <TransitionLastModified>2019-06-25T03:08:33.8551988-05:00</TransitionLastModified>
+      <TransitionSourcePointGUID>876a470a-1ccf-43e5-ae46-0e2c86d3e82e</TransitionSourcePointGUID>
+      <TransitionWorkflowID>214</TransitionWorkflowID>
+    </cms_workflowtransition>
+  </NewDataSet>
+</ma_automationprocess>

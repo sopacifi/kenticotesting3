@@ -1,0 +1,22 @@
+﻿<ecommerce_publicstatus version="12.0">
+  <NewDataSet>
+    <com_publicstatus>
+      <PublicStatusID>1</PublicStatusID>
+      <PublicStatusName>DancingGoatMvc.Bestseller</PublicStatusName>
+      <PublicStatusDisplayName>{$DancingGoatMvc.PublicStatus.Bestseller$}</PublicStatusDisplayName>
+      <PublicStatusEnabled>true</PublicStatusEnabled>
+      <PublicStatusGUID>ec91ee1a-0ef0-48ea-872f-2527f8b121a2</PublicStatusGUID>
+      <PublicStatusLastModified>2017-03-03T06:19:51.9650405-06:00</PublicStatusLastModified>
+      <PublicStatusSiteID>1</PublicStatusSiteID>
+    </com_publicstatus>
+    <com_publicstatus>
+      <PublicStatusID>2</PublicStatusID>
+      <PublicStatusName>DancingGoatMvc.OnSale</PublicStatusName>
+      <PublicStatusDisplayName>{$DancingGoatMvc.PublicStatus.OnSale$}</PublicStatusDisplayName>
+      <PublicStatusEnabled>true</PublicStatusEnabled>
+      <PublicStatusGUID>78944592-b226-479f-98cb-e1682db379b7</PublicStatusGUID>
+      <PublicStatusLastModified>2017-03-03T06:19:51.9764884-06:00</PublicStatusLastModified>
+      <PublicStatusSiteID>1</PublicStatusSiteID>
+    </com_publicstatus>
+  </NewDataSet>
+</ecommerce_publicstatus>

@@ -1,0 +1,16 @@
+﻿<om_abtest version="12.0">
+  <NewDataSet>
+    <om_abtest>
+      <ABTestID>1</ABTestID>
+      <ABTestName>Home_en-US</ABTestName>
+      <ABTestCulture>en-US</ABTestCulture>
+      <ABTestOriginalPage>/Home</ABTestOriginalPage>
+      <ABTestSiteID>1</ABTestSiteID>
+      <ABTestGUID>e1f3c6ce-5773-47b6-a683-acc69152b507</ABTestGUID>
+      <ABTestLastModified>2019-06-25T03:08:36.9652562-05:00</ABTestLastModified>
+      <ABTestDisplayName>Home (en-US)</ABTestDisplayName>
+      <ABTestIncludedTraffic>100</ABTestIncludedTraffic>
+      <ABTestConversions>&lt;conversions&gt;&lt;conversion name="PageVisit|/en-US/Product/473e9cf0-055a-44c3-bb5f-224ccfb13289/Colombia-Carlos-Imbachi" value="1" item="/en-US/Product/473e9cf0-055a-44c3-bb5f-224ccfb13289/Colombia-Carlos-Imbachi" itemname="/en-US/Product/473e9cf0-055a-44c3-bb5f-224ccfb13289/Colombia-Carlos-Imbachi" /&gt;&lt;conversion name="Purchase" value="0" /&gt;&lt;/conversions&gt;</ABTestConversions>
+    </om_abtest>
+  </NewDataSet>
+</om_abtest>

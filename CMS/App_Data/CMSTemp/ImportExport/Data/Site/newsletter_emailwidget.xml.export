@@ -1,0 +1,477 @@
+﻿<newsletter_emailwidget version="12.0">
+  <NewDataSet>
+    <newsletter_emailwidget>
+      <EmailWidgetID>1</EmailWidgetID>
+      <EmailWidgetGuid>95d7ae68-ea58-4daa-9623-056233988d22</EmailWidgetGuid>
+      <EmailWidgetLastModified>2019-06-25T03:08:36.7308978-05:00</EmailWidgetLastModified>
+      <EmailWidgetDisplayName>CTA button</EmailWidgetDisplayName>
+      <EmailWidgetName>CTAButton</EmailWidgetName>
+      <EmailWidgetDescription>A call-to-action button with color selection and UTM content.</EmailWidgetDescription>
+      <EmailWidgetCode>{% /*
+The CTA button widget renders a button with a custom link (URL selector), with UTM content parameter and a selected color.
+
+Thanks to the Recipient.IsInPersona macro, the widget allows to be displayed for chosen personas only. The macro accepts multiple personas and returns TRUE if no persona is
+selected.
+
+If the link includes a URL parameter already, this email widget may produce an invalid URL.
+*/ @%}
+
+{% if(Recipient.IsInPersona(Personas)) { %}
+
+{%
+  utmContentParameter = UTMContent == String.Empty ? String.Empty : "?utm_content=" + UTMContent;
+  buttonLink = Link + utmContentParameter;
+  return;
+#%}
+
+&lt;table width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td align="center" style="padding: 10px 0px 15px 0px;" class="padding"&gt;
+            &lt;table border="0" cellspacing="0" cellpadding="0" class="mobile-button-container"&gt;
+                &lt;tr&gt;
+                    &lt;td align="center" style="border-radius: 3px;" bgcolor="{% Color %}"&gt;
+                        &lt;a href="{% buttonLink %}" target="_blank"
+                            style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid {% Color %}; display: inline-block;"
+                            class="mobile-button"&gt;{% Text == String.Empty ? "Your CTA here" : Text #%}&lt;/a&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+{% } |(identity)GlobalAdministrator|(hash)8bef53394acb9cd9b5f9d326e70a1a50bea833d9d390780cc8bd45dbd6f5829e%}</EmailWidgetCode>
+      <EmailWidgetSiteID>1</EmailWidgetSiteID>
+      <EmailWidgetIconCssClass>icon-chain</EmailWidgetIconCssClass>
+      <EmailWidgetProperties>&lt;form version="2"&gt;&lt;field column="Text" columnsize="200" columntype="text" guid="9bf0a9a2-54bc-4f57-8f86-f4a8ee629500" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;Text&lt;/fieldcaption&gt;&lt;fielddescription&gt;Sets the text displayed on the CTA button.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;AutoCompleteEnableCaching&gt;False&lt;/AutoCompleteEnableCaching&gt;&lt;AutoCompleteFirstRowSelected&gt;False&lt;/AutoCompleteFirstRowSelected&gt;&lt;AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;False&lt;/AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;&lt;controlname&gt;TextBoxControl&lt;/controlname&gt;&lt;FilterMode&gt;False&lt;/FilterMode&gt;&lt;Trim&gt;False&lt;/Trim&gt;&lt;/settings&gt;&lt;/field&gt;&lt;field column="Link" columnsize="450" columntype="text" guid="4c3afd66-7d30-41cf-8c02-29fa495c8051" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;URL&lt;/fieldcaption&gt;&lt;fielddescription&gt;Sets the link the CTA button points to.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;Autoresize&gt;&amp;lt;AutoResize&amp;gt;
+  &amp;lt;autoresize&amp;gt;noresize&amp;lt;/autoresize&amp;gt;
+  &amp;lt;autoresize_width /&amp;gt;
+  &amp;lt;autoresize_height /&amp;gt;
+  &amp;lt;autoresize_maxsidesize /&amp;gt;
+&amp;lt;/AutoResize&amp;gt;&lt;/Autoresize&gt;&lt;Configuration&gt;True&lt;/Configuration&gt;&lt;controlname&gt;URLSelector&lt;/controlname&gt;&lt;Dialogs_Content_Hide&gt;False&lt;/Dialogs_Content_Hide&gt;&lt;Dialogs_Content_Site&gt;##all##&lt;/Dialogs_Content_Site&gt;&lt;Dialogs_Libraries_Site&gt;##all##&lt;/Dialogs_Libraries_Site&gt;&lt;/settings&gt;&lt;/field&gt;&lt;field allowempty="true" column="Color" columnsize="200" columntype="text" guid="5d306db1-075e-443e-b341-888c45074987" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;defaultvalue&gt;#256f9c&lt;/defaultvalue&gt;&lt;fieldcaption&gt;Color&lt;/fieldcaption&gt;&lt;fielddescription&gt;Sets the color of the CTA button.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;controlname&gt;RadioButtonsControl&lt;/controlname&gt;&lt;Options&gt;#256f9c;Blue
+#b24143;Red&lt;/Options&gt;&lt;RepeatDirection&gt;vertical&lt;/RepeatDirection&gt;&lt;RepeatLayout&gt;Flow&lt;/RepeatLayout&gt;&lt;SortItems&gt;False&lt;/SortItems&gt;&lt;/settings&gt;&lt;/field&gt;&lt;field allowempty="true" column="UTMContent" columnsize="200" columntype="text" guid="cadd85c5-73b5-4ead-b28e-298ad3d7c0ae" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;UTM content&lt;/fieldcaption&gt;&lt;fielddescription&gt;Specifies a UTM parameter for the CTA button link.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;AutoCompleteEnableCaching&gt;False&lt;/AutoCompleteEnableCaching&gt;&lt;AutoCompleteFirstRowSelected&gt;False&lt;/AutoCompleteFirstRowSelected&gt;&lt;AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;False&lt;/AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;&lt;controlname&gt;TextBoxControl&lt;/controlname&gt;&lt;FilterMode&gt;False&lt;/FilterMode&gt;&lt;Trim&gt;False&lt;/Trim&gt;&lt;/settings&gt;&lt;/field&gt;&lt;field allowempty="true" column="Personas" columnsize="400" columntype="text" guid="795f7ccf-0c6b-4006-a028-0d314351cc56" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;Personas&lt;/fieldcaption&gt;&lt;fielddescription&gt;Specifies personas the CTA button is displayed to.
+If no persona is selected, widget is displayed to all recipients.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;AddGlobalObjectNamePrefix&gt;False&lt;/AddGlobalObjectNamePrefix&gt;&lt;AddGlobalObjectSuffix&gt;False&lt;/AddGlobalObjectSuffix&gt;&lt;AllowAll&gt;False&lt;/AllowAll&gt;&lt;AllowDefault&gt;False&lt;/AllowDefault&gt;&lt;AllowEditTextBox&gt;False&lt;/AllowEditTextBox&gt;&lt;AllowEmpty&gt;True&lt;/AllowEmpty&gt;&lt;controlname&gt;Uni_selector&lt;/controlname&gt;&lt;DialogWindowName&gt;SelectionDialog&lt;/DialogWindowName&gt;&lt;EditDialogWindowHeight&gt;700&lt;/EditDialogWindowHeight&gt;&lt;EditDialogWindowWidth&gt;1000&lt;/EditDialogWindowWidth&gt;&lt;EditWindowName&gt;EditWindow&lt;/EditWindowName&gt;&lt;EncodeOutput&gt;True&lt;/EncodeOutput&gt;&lt;GlobalObjectSuffix ismacro="true"&gt;{$general.global$}&lt;/GlobalObjectSuffix&gt;&lt;ItemsPerPage&gt;25&lt;/ItemsPerPage&gt;&lt;LocalizeItems&gt;True&lt;/LocalizeItems&gt;&lt;MaxDisplayedItems&gt;25&lt;/MaxDisplayedItems&gt;&lt;MaxDisplayedTotalItems&gt;50&lt;/MaxDisplayedTotalItems&gt;&lt;ObjectType&gt;Personas.Persona&lt;/ObjectType&gt;&lt;RemoveMultipleCommas&gt;False&lt;/RemoveMultipleCommas&gt;&lt;ReturnColumnName&gt;PersonaGUID&lt;/ReturnColumnName&gt;&lt;ReturnColumnType&gt;id&lt;/ReturnColumnType&gt;&lt;SelectionMode&gt;2&lt;/SelectionMode&gt;&lt;UseDefaultNameFilter&gt;True&lt;/UseDefaultNameFilter&gt;&lt;ValuesSeparator&gt;;&lt;/ValuesSeparator&gt;&lt;/settings&gt;&lt;/field&gt;&lt;/form&gt;</EmailWidgetProperties>
+    </newsletter_emailwidget>
+    <newsletter_emailwidget>
+      <EmailWidgetID>2</EmailWidgetID>
+      <EmailWidgetGuid>12077b33-fe01-418b-87e2-0e7c1a386b3a</EmailWidgetGuid>
+      <EmailWidgetLastModified>2019-06-25T03:08:36.7777728-05:00</EmailWidgetLastModified>
+      <EmailWidgetDisplayName>Headline</EmailWidgetDisplayName>
+      <EmailWidgetName>Headline</EmailWidgetName>
+      <EmailWidgetDescription>Displays a headline for the section below.</EmailWidgetDescription>
+      <EmailWidgetCode>{% /*
+The Headline email widget allows to display a headline in the email.
+
+If no value is provided for the headline in the email widget properties, the code automatically returns a default text with an advise.
+This is sometimes a better option than using a default value in the property itself as that could remain unnoticed before sending
+(as default value meets the "required" criteria and is therefore not highlighted in the email builder).
+*/ @%}
+&lt;table width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td align="center" style="font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333; padding: 10px 0 15px 0;" class="padding"&gt;
+          {% Text == String.Empty ? "Write a catchy headline for the section below." : Text |(identity)GlobalAdministrator|(hash)a910e4cd70b2a1c699ff9d66b829a95ba495b0f4bbd058d207b1854359607be5%}
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</EmailWidgetCode>
+      <EmailWidgetSiteID>1</EmailWidgetSiteID>
+      <EmailWidgetIconCssClass>icon-l-header-text</EmailWidgetIconCssClass>
+      <EmailWidgetProperties>&lt;form version="2"&gt;&lt;field column="Text" columnsize="200" columntype="text" guid="723173c6-9df1-42b6-9495-620d3135cb70" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;Headline&lt;/fieldcaption&gt;&lt;fielddescription&gt;Sets the text of the headline.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;AutoCompleteEnableCaching&gt;False&lt;/AutoCompleteEnableCaching&gt;&lt;AutoCompleteFirstRowSelected&gt;False&lt;/AutoCompleteFirstRowSelected&gt;&lt;AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;False&lt;/AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;&lt;controlname&gt;TextBoxControl&lt;/controlname&gt;&lt;FilterMode&gt;False&lt;/FilterMode&gt;&lt;Trim&gt;False&lt;/Trim&gt;&lt;/settings&gt;&lt;/field&gt;&lt;/form&gt;</EmailWidgetProperties>
+    </newsletter_emailwidget>
+    <newsletter_emailwidget>
+      <EmailWidgetID>3</EmailWidgetID>
+      <EmailWidgetGuid>a33d5b78-5a4a-449c-8f16-7337ffbaaf37</EmailWidgetGuid>
+      <EmailWidgetLastModified>2019-06-25T03:08:36.8871277-05:00</EmailWidgetLastModified>
+      <EmailWidgetDisplayName>Text</EmailWidgetDisplayName>
+      <EmailWidgetName>Text</EmailWidgetName>
+      <EmailWidgetDescription>Text area supporting basic formatting.</EmailWidgetDescription>
+      <EmailWidgetCode>{% /*
+The Text email widget allows to enter text with basic formatting options.
+
+The Text property uses a Rich text editor with EmailWidgets toolbar set. You can use another toolbar set in order to provide different formatting capabilities.
+
+If no text is provided in the email widget properties, the code automatically returns a default text with an advise.
+This is sometimes a better option than using a default value in the property itself as that could remain unnoticed before sending
+(as default value meets the "required" criteria and is therefore not highlighted in the email builder).
+*/ @%}
+&lt;table width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+  &lt;tr&gt;
+    &lt;td align="center" style="padding: 10px 0 15px 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding"&gt;
+      {% Text == String.Empty ? "Enter your text and add some basic formatting." : Text |(identity)GlobalAdministrator|(hash)577eababb3c32507a73b4a6f33d091bda9162380bddacbf0bbc48653f33e7502%}
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</EmailWidgetCode>
+      <EmailWidgetSiteID>1</EmailWidgetSiteID>
+      <EmailWidgetIconCssClass>icon-l-text</EmailWidgetIconCssClass>
+      <EmailWidgetProperties>&lt;form version="2"&gt;&lt;field column="Text" columntype="longtext" guid="c6009a8e-149d-40e5-a314-32e8da31b6ac" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;Content&lt;/fieldcaption&gt;&lt;fielddescription&gt;Text displayed in the text area.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;controlname&gt;HtmlAreaControl&lt;/controlname&gt;&lt;CSSStylesheet&gt;0&lt;/CSSStylesheet&gt;&lt;Dialogs_Content_Hide&gt;False&lt;/Dialogs_Content_Hide&gt;&lt;Dialogs_Content_Site&gt;##all##&lt;/Dialogs_Content_Site&gt;&lt;Dialogs_Libraries_Site&gt;##all##&lt;/Dialogs_Libraries_Site&gt;&lt;HeightUnitType&gt;PX&lt;/HeightUnitType&gt;&lt;MediaDialogConfiguration&gt;True&lt;/MediaDialogConfiguration&gt;&lt;ShowAddStampButton&gt;False&lt;/ShowAddStampButton&gt;&lt;ToolbarSet&gt;EmailWidgets&lt;/ToolbarSet&gt;&lt;Width&gt;100&lt;/Width&gt;&lt;WidthUnitType&gt;PERCENTAGE&lt;/WidthUnitType&gt;&lt;/settings&gt;&lt;/field&gt;&lt;/form&gt;</EmailWidgetProperties>
+    </newsletter_emailwidget>
+    <newsletter_emailwidget>
+      <EmailWidgetID>4</EmailWidgetID>
+      <EmailWidgetGuid>6f3c80fe-fc43-4be0-9140-79551697736b</EmailWidgetGuid>
+      <EmailWidgetLastModified>2019-06-25T03:08:36.8246137-05:00</EmailWidgetLastModified>
+      <EmailWidgetDisplayName>Latest articles</EmailWidgetDisplayName>
+      <EmailWidgetName>LatestArticles</EmailWidgetName>
+      <EmailWidgetDescription>Displays the four latest articles from the Dancing Goat sample site (obtained dynamically when sending the email).</EmailWidgetDescription>
+      <EmailWidgetCode>{% /*
+The Latest articles email widget dynamically obtains four latest articles from the Dancing Goat demo site at the time when the email issue is generated.
+It achieves so by using macros that access pages with the given attributes.
+*/ @%}
+
+{% 
+  articles = Documents["/Articles"]
+               .CultureVersions["en-US"]
+               .Children
+                 .ClassNames("dancinggoatmvc.article")
+                 .OrderBy("DocumentPublishFrom DESC")
+                 .TopN(4)
+                 .WithAllData; 
+return; 
+|(identity)GlobalAdministrator|(hash)07df9a307f9381c1879ec167bfb973d3be210ad8dae0b4a2a71dbf21e0394cdd%}
+
+&lt;!--[if (gte mso 9)|(IE)]&gt;
+&lt;table align="center" border="0" cellspacing="0" cellpadding="0" width="500"&gt;
+&lt;tr&gt;
+&lt;td align="center" valign="top" width="500"&gt;
+&lt;![endif]--&gt;
+&lt;table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:500px;"&gt;
+  
+{%
+  i = 0;
+  isFirstItemInRow = false;
+  foreach (article in articles) { 
+%}
+  
+{% 
+    isFirstItemInRow = (Modulo(i, 2) == 0);
+    articleUrl = UTMContent == String.Empty ? article.RelativeURL : article.RelativeURL + "?utm_content=" + UTMContent;
+    articleTeaserUrl = "~/getattachment/" + article.ArticleTeaser + "/teaser";
+    articleLinkText = LinkText == String.Empty ? "Continue reading" : LinkText;
+    return; 
+%}
+  
+{%  if (isFirstItemInRow)  { %}
+  &lt;tr&gt;
+    &lt;td align="center" valign="top" style="font-size:0; padding: 10px 0 15px 0" class="padding"&gt;
+&lt;!--[if (gte mso 9)|(IE)]&gt;
+&lt;table align="center" border="0" cellspacing="0" cellpadding="0" width="500"&gt;
+&lt;tr&gt;
+&lt;![endif]--&gt;
+{% } /* END if */ #%}
+      
+&lt;!--[if (gte mso 9)|(IE)]&gt;
+&lt;td align="left" valign="top" width="240"&gt;
+&lt;![endif]--&gt;
+      &lt;div style="display:inline-block; margin: 0 -2px; max-width:50%; min-width:240px; vertical-align:top; width:100%;" class="wrapper"&gt;
+        &lt;table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="{% isFirstItemInRow ? "max-width:240px;" : "max-width:240px; float:right;" %}" class="wrapper"&gt;
+          &lt;tr&gt;
+            &lt;td align="center" valign="top"&gt;
+              &lt;table border="0" cellpadding="0" cellspacing="0" width="100%"&gt;
+                &lt;tr&gt;
+                  &lt;td style="padding: 20px 0 30px 0;"&gt;
+                    &lt;table cellpadding="0" cellspacing="0" border="0" width="100%"&gt;
+                      &lt;tr&gt;
+                        &lt;td align="center" valign="middle"&gt;&lt;a href="{% articleUrl #%}" target="_blank"&gt;&lt;img src="{% articleTeaserUrl #%}" width="240" height="130" style="display: block; color: #666666; font-family: Helvetica, arial, sans-serif; font-size: 13px; width: 240px; height: 130px;" alt="Fluid images" border="0" class="img-max"&gt;&lt;/a&gt;&lt;/td&gt;
+                      &lt;/tr&gt;
+                      &lt;tr&gt;
+                        &lt;td align="center" style="padding: 15px 0 0 0; font-family: Arial, sans-serif; color: #333333; font-size: 20px;"&gt;{% article.ArticleTitle #%}&lt;/td&gt;
+                      &lt;/tr&gt;
+                      &lt;tr&gt;
+                        &lt;td align="center" style="padding: 5px 0 0 0; font-family: Arial, sans-serif; color: #666666; font-size: 14px; line-height: 20px;"&gt;{% article.ArticleSummary #%}&lt;/td&gt;
+                      &lt;/tr&gt;
+                      &lt;tr&gt;
+                        &lt;td align="center" style="padding: 5px 0 0 0; font-family: Arial, sans-serif; color: #666666; font-size: 14px; line-height: 20px;"&gt;&lt;a href="{% articleUrl #%}" target="_blank" style="color: #256F9C; text-decoration: none;"&gt;{% articleLinkText #%} &amp;rarr;&lt;/a&gt;&lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+              
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+&lt;!--[if (gte mso 9)|(IE)]&gt;
+&lt;/td&gt;
+&lt;![endif]--&gt;
+      
+{%  if (isFirstItemInRow)  { %}
+&lt;!--[if (gte mso 9)|(IE)]&gt;
+&lt;td width="20" style="font-size: 1px;"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;![endif]--&gt;
+{% } /* END if */ #%}      
+ 
+      
+{%  if (!isFirstItemInRow)  { %}
+&lt;!--[if (gte mso 9)|(IE)]&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;![endif]--&gt;                                    
+&lt;/td&gt;
+&lt;/tr&gt;
+{% } /* END if */ #%} 
+  
+{% i++; return; %} 
+{% } /* END foreach */ |(identity)GlobalAdministrator|(hash)1b7cfb190504cf5d8b270bb72baad5047f5ca72bed106791ad0e0314dd156eb2%} 
+
+&lt;/table&gt;
+&lt;!--[if (gte mso 9)|(IE)]&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;![endif]--&gt;   </EmailWidgetCode>
+      <EmailWidgetSiteID>1</EmailWidgetSiteID>
+      <EmailWidgetIconCssClass>icon-l-list-article</EmailWidgetIconCssClass>
+      <EmailWidgetProperties>&lt;form version="2"&gt;&lt;field allowempty="true" column="LinkText" columnsize="20" columntype="text" guid="d92661aa-5a28-4295-9092-3d5480b0e567" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;Link text&lt;/fieldcaption&gt;&lt;fielddescription&gt;Sets a custom text for the link under the articles.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;AutoCompleteEnableCaching&gt;False&lt;/AutoCompleteEnableCaching&gt;&lt;AutoCompleteFirstRowSelected&gt;False&lt;/AutoCompleteFirstRowSelected&gt;&lt;AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;False&lt;/AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;&lt;controlname&gt;TextBoxControl&lt;/controlname&gt;&lt;FilterMode&gt;False&lt;/FilterMode&gt;&lt;Trim&gt;False&lt;/Trim&gt;&lt;/settings&gt;&lt;/field&gt;&lt;field allowempty="true" column="UTMContent" columnsize="200" columntype="text" guid="f3d165ce-85b0-4c11-8d02-e3c6452fd4f9" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;UTM content&lt;/fieldcaption&gt;&lt;fielddescription&gt;Specifies a UTM parameter for the links in this widget.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;AutoCompleteEnableCaching&gt;False&lt;/AutoCompleteEnableCaching&gt;&lt;AutoCompleteFirstRowSelected&gt;False&lt;/AutoCompleteFirstRowSelected&gt;&lt;AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;False&lt;/AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;&lt;controlname&gt;TextBoxControl&lt;/controlname&gt;&lt;FilterMode&gt;False&lt;/FilterMode&gt;&lt;Trim&gt;False&lt;/Trim&gt;&lt;/settings&gt;&lt;/field&gt;&lt;/form&gt;</EmailWidgetProperties>
+    </newsletter_emailwidget>
+    <newsletter_emailwidget>
+      <EmailWidgetID>5</EmailWidgetID>
+      <EmailWidgetGuid>312ceb63-db90-4896-8f1c-7a65f87cfa5d</EmailWidgetGuid>
+      <EmailWidgetLastModified>2019-06-25T03:08:36.6996171-05:00</EmailWidgetLastModified>
+      <EmailWidgetDisplayName>Cafe</EmailWidgetDisplayName>
+      <EmailWidgetName>Cafe</EmailWidgetName>
+      <EmailWidgetDescription>The Cafe widget allows the selection of a Cafe (the Cafe page type item) using an uni-selector. The email widget is then rendered based on obtained attributes.</EmailWidgetDescription>
+      <EmailWidgetCode>{%
+  cafe = Documents[CafePath];
+  street = cafe.CafeStreet == String.Empty ? "Street" : cafe.CafeStreet;
+  zipCode = cafe.CafeZipCode == String.Empty  ? "ZipCode" : cafe.CafeZipCode;
+  city = cafe.CafeCity == String.Empty ? "City" : cafe.CafeCity;
+  url = UTMContent == String.Empty ? cafe.RelativeURL : cafe.RelativeURL + "?utm_content=" + UTMContent;
+  photoUrl = cafe.CafePhoto == String.Empty ? "~/getmedia/b2357cd8-efd2-4484-bf6f-ae650ac6fd38/cafe-default-image.png" : "~/getattachment/" + cafe.CafePhoto + "/dancing-goat-cafe";
+  title = "Dancing Goat " + (cafe.CafeCity == String.Empty ? "Cafe" : cafe.CafeCity);
+  address = street + ", " + zipCode + ", " + city;
+  ctaText = ButtonText == String.Empty ? "Learn More" : ButtonText;
+  return; 
+|(identity)GlobalAdministrator|(hash)75ecde1c457461d9d3a035e0e34fb822077042a8c95aa8485ed33406b4920f77%}
+&lt;!--[if (gte mso 9)|(IE)]&gt;
+&lt;table align="center" border="0" cellspacing="0" cellpadding="0" width="500"&gt;
+&lt;tr&gt;
+&lt;td align="center" valign="top" width="500"&gt;
+&lt;![endif]--&gt;
+&lt;table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:500;"&gt;
+    &lt;tr&gt;
+        &lt;td align="center" valign="top" style="font-size:0; padding: 10px 0 15px 0;"&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;table align="center" border="0" cellspacing="0" cellpadding="0" width="500"&gt;
+            &lt;tr&gt;
+            &lt;td align="left" valign="top" width="115"&gt;
+            &lt;![endif]--&gt;
+            &lt;div style="display:inline-block; margin: 0 -2px; max-width:115px; vertical-align:top; width:100%;"&gt; 
+                &lt;table align="left" border="0" cellpadding="0" cellspacing="0" width="115"&gt;
+                    &lt;tr&gt;
+                        &lt;td valign="top" style="padding: 40px 0 0 0;"&gt;&lt;img src="{% photoUrl %}" alt="{% title %}" width="105" height="105" border="0" style="display: block; font-family: Arial; color: #666666; font-size: 14px; width: 105px; height: 105px;"&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/div&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;/td&gt;
+            &lt;td align="left" valign="top" width="385"&gt;
+            &lt;![endif]--&gt;
+            &lt;div style="display:inline-block; margin: 0 -2px; max-width:385px; vertical-align:top; width:100%;"&gt;
+
+                &lt;table align="left" border="0" cellpadding="0" cellspacing="0" width="100%"&gt;
+                    &lt;tr&gt;
+
+                        &lt;td style="padding: 40px 0 0 0;" class="no-padding"&gt;
+                            &lt;!-- ARTICLE --&gt;
+                            &lt;table border="0" cellspacing="0" cellpadding="0" width="100%"&gt;
+                                &lt;tr&gt;
+                                    &lt;td align="left" style="padding: 0 0 5px 25px; font-size: 22px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;" class="padding"&gt;{% title %}&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td align="left" style="padding: 10px 0 15px 25px; font-size: 16px; line-height: 24px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding"&gt;{% address %}&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td style="padding:0 0 20px 25px;" align="left" class="padding"&gt;
+                                        &lt;table border="0" cellspacing="0" cellpadding="0" class="mobile-button-container"&gt;
+                                            &lt;tr&gt;
+                                                &lt;td align="center"&gt;
+                                                    &lt;!-- BULLETPROOF BUTTON --&gt;
+                                                    &lt;table width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+                                                        &lt;tr&gt;
+                                                            &lt;td align="left"&gt;
+                                                                &lt;table border="0" cellspacing="0" cellpadding="0" class="mobile-button-container"&gt;
+                                                                    &lt;tr&gt;
+                                                                        &lt;td align="center" style="border-radius: 3px;" bgcolor="#b24143"&gt;&lt;a href="{% url %}" target="_blank" style="font-size: 15px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 10px 20px; border: 1px solid #b24143; display: inline-block;" class="mobile-button"&gt;{% ctaText %} &amp;rarr;&lt;/a&gt;&lt;/td&gt;
+                                                                    &lt;/tr&gt;
+                                                                &lt;/table&gt;
+                                                            &lt;/td&gt;
+                                                        &lt;/tr&gt;
+                                                    &lt;/table&gt;
+                                                &lt;/td&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/div&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;![endif]--&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+&lt;!--[if (gte mso 9)|(IE)]&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;![endif]--&gt;
+</EmailWidgetCode>
+      <EmailWidgetSiteID>1</EmailWidgetSiteID>
+      <EmailWidgetIconCssClass>icon-cup</EmailWidgetIconCssClass>
+      <EmailWidgetProperties>&lt;form version="2"&gt;&lt;field column="CafePath" columnsize="450" columntype="text" guid="05f995d3-ef52-40a6-81e9-44d41e3194ed" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;Cafe&lt;/fieldcaption&gt;&lt;fielddescription&gt;Select the cafe to display.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;AddGlobalObjectNamePrefix&gt;False&lt;/AddGlobalObjectNamePrefix&gt;&lt;AddGlobalObjectSuffix&gt;False&lt;/AddGlobalObjectSuffix&gt;&lt;AllowAll&gt;False&lt;/AllowAll&gt;&lt;AllowDefault&gt;False&lt;/AllowDefault&gt;&lt;AllowEditTextBox&gt;False&lt;/AllowEditTextBox&gt;&lt;AllowEmpty&gt;False&lt;/AllowEmpty&gt;&lt;controlname&gt;Uni_selector&lt;/controlname&gt;&lt;DialogWindowName&gt;SelectionDialog&lt;/DialogWindowName&gt;&lt;EditDialogWindowHeight&gt;700&lt;/EditDialogWindowHeight&gt;&lt;EditDialogWindowWidth&gt;1000&lt;/EditDialogWindowWidth&gt;&lt;EditWindowName&gt;EditWindow&lt;/EditWindowName&gt;&lt;EncodeOutput&gt;True&lt;/EncodeOutput&gt;&lt;GlobalObjectSuffix ismacro="true"&gt;{$general.global$}&lt;/GlobalObjectSuffix&gt;&lt;ItemsPerPage&gt;25&lt;/ItemsPerPage&gt;&lt;LocalizeItems&gt;True&lt;/LocalizeItems&gt;&lt;MaxDisplayedItems&gt;25&lt;/MaxDisplayedItems&gt;&lt;MaxDisplayedTotalItems&gt;50&lt;/MaxDisplayedTotalItems&gt;&lt;ObjectType&gt;cms.document.DancingGoatMvc.Cafe&lt;/ObjectType&gt;&lt;RemoveMultipleCommas&gt;False&lt;/RemoveMultipleCommas&gt;&lt;ReturnColumnName&gt;NodeAliasPath&lt;/ReturnColumnName&gt;&lt;ReturnColumnType&gt;id&lt;/ReturnColumnType&gt;&lt;SelectionMode&gt;0&lt;/SelectionMode&gt;&lt;UseDefaultNameFilter&gt;True&lt;/UseDefaultNameFilter&gt;&lt;ValuesSeparator&gt;;&lt;/ValuesSeparator&gt;&lt;WhereCondition&gt;DocumentCulture = 'en-US'&lt;/WhereCondition&gt;&lt;/settings&gt;&lt;/field&gt;&lt;field allowempty="true" column="ButtonText" columnsize="200" columntype="text" guid="1ed512e2-c5db-4e77-8d1e-59629bbeccb2" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;defaultvalue&gt;Learn More&lt;/defaultvalue&gt;&lt;fieldcaption&gt;Button text&lt;/fieldcaption&gt;&lt;fielddescription&gt;Sets the text displayed on the button.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;AutoCompleteEnableCaching&gt;False&lt;/AutoCompleteEnableCaching&gt;&lt;AutoCompleteFirstRowSelected&gt;False&lt;/AutoCompleteFirstRowSelected&gt;&lt;AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;False&lt;/AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;&lt;controlname&gt;TextBoxControl&lt;/controlname&gt;&lt;FilterMode&gt;False&lt;/FilterMode&gt;&lt;Trim&gt;False&lt;/Trim&gt;&lt;/settings&gt;&lt;/field&gt;&lt;field allowempty="true" column="UTMContent" columnsize="200" columntype="text" guid="f31b702e-520f-496b-892d-8d736761f8bf" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;UTM content&lt;/fieldcaption&gt;&lt;fielddescription&gt;Specifies a UTM parameter for the button link.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;AutoCompleteEnableCaching&gt;False&lt;/AutoCompleteEnableCaching&gt;&lt;AutoCompleteFirstRowSelected&gt;False&lt;/AutoCompleteFirstRowSelected&gt;&lt;AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;False&lt;/AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;&lt;controlname&gt;TextBoxControl&lt;/controlname&gt;&lt;FilterMode&gt;False&lt;/FilterMode&gt;&lt;Trim&gt;False&lt;/Trim&gt;&lt;/settings&gt;&lt;/field&gt;&lt;/form&gt;</EmailWidgetProperties>
+    </newsletter_emailwidget>
+    <newsletter_emailwidget>
+      <EmailWidgetID>6</EmailWidgetID>
+      <EmailWidgetGuid>153f374d-d29d-48e0-ac61-ae5ed385d89a</EmailWidgetGuid>
+      <EmailWidgetLastModified>2019-06-25T03:08:36.8558594-05:00</EmailWidgetLastModified>
+      <EmailWidgetDisplayName>Product</EmailWidgetDisplayName>
+      <EmailWidgetName>Product</EmailWidgetName>
+      <EmailWidgetDescription>Displays a selected product in the email.</EmailWidgetDescription>
+      <EmailWidgetCode>{% /*
+The Product email widget displays a selected product with the possibility to override some of the default attributes. This is done by providing additional properties.
+*/ @%}
+{%
+  product = ProductGUID == null ? null : SiteObjects.SKUs[ProductGUID];
+
+  productLink = "~/"; 
+  imageUrl = "~/getmedia/b2357cd8-efd2-4484-bf6f-ae650ac6fd38/default-product.png?maxsidesize=500";
+  productName = "Product name";
+  productDescription = "The default product name and description as specified in the Products application will be displayed here. To set a custom product name and product description, change the &lt;i&gt;Product name&lt;/i&gt; and &lt;i&gt;Product description&lt;/i&gt; properties.";
+  ctaText = "Learn More";
+  productID = 0;
+
+  if (product != null) 
+  {
+     utmContentParameter = UTMContent == String.Empty ? String.Empty : "?utm_content=" + UTMContent;
+     productLink = SiteObjects.Documents.Where("NodeSKUID = "+ product.SKUID).FirstItem.RelativeURL + utmContentParameter;
+     imageUrl = AlternativeProductImage == String.Empty ? product.SKUImagePath : AlternativeProductImage;
+     productName = AlternativeProductName == String.Empty ? product.SKUName : AlternativeProductName;
+     productDescription = StripTags(AlternativeProductDescription) == String.Empty ? product.SKUShortDescription : AlternativeProductDescription; 
+     ctaText = ButtonText == String.Empty ? ctaText : ButtonText; 
+  }
+  return;
+|(identity)GlobalAdministrator|(hash)26ef2822f3facb45418469f04eb873316fdc4573b31320bb02001ab14a0b9258%}
+
+&lt;table width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td class="padding" align="center" style="padding-top: 10px;"&gt;
+          {%  %}
+            &lt;a href="{%productLink %}" target="_blank"&gt;
+                &lt;img src="{%imageUrl%}" width="500" border="0" alt="{%productName%}" style="display: block; color: #666666;  font-family: Helvetica, arial, sans-serif; font-size: 16px;" class="img-max"&gt;
+            &lt;/a&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            &lt;table width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+                &lt;tr&gt;
+                    &lt;td align="center" style="font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333; padding-top: 30px;" class="padding"&gt;{%productName%}&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td align="center" style="padding: 20px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding"&gt;{%productDescription%}&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td align="center" style="padding-bottom: 10px;"&gt;
+            &lt;table width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+                &lt;tr&gt;
+                    &lt;td align="center" style="padding-top: 25px;" class="padding"&gt;
+                        &lt;table border="0" cellspacing="0" cellpadding="0" class="mobile-button-container"&gt;
+                            &lt;tr&gt;
+                                &lt;td align="center" style="border-radius: 3px;" bgcolor="#256F9C"&gt;&lt;a href="{%productLink %}" target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; border-radius: 3px; padding: 15px 25px; border: 1px solid #256F9C; display: inline-block;" class="mobile-button"&gt;{%ctaText%} &amp;rarr;&lt;/a&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/table&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+</EmailWidgetCode>
+      <EmailWidgetSiteID>1</EmailWidgetSiteID>
+      <EmailWidgetIconCssClass>icon-box</EmailWidgetIconCssClass>
+      <EmailWidgetProperties>&lt;form version="2"&gt;&lt;field column="ProductGUID" columntype="guid" guid="75fd7c3f-abf2-486f-a9a1-7cc8aa1e1ff1" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;Product&lt;/fieldcaption&gt;&lt;fielddescription&gt;Select product that will be displayed in email.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;AllowEmpty&gt;False&lt;/AllowEmpty&gt;&lt;AllowMultipleChoice&gt;False&lt;/AllowMultipleChoice&gt;&lt;controlname&gt;SKUSelector&lt;/controlname&gt;&lt;DisplayBundles&gt;True&lt;/DisplayBundles&gt;&lt;DisplayEproducts&gt;True&lt;/DisplayEproducts&gt;&lt;DisplayMemberships&gt;True&lt;/DisplayMemberships&gt;&lt;DisplayNoDataMessage&gt;True&lt;/DisplayNoDataMessage&gt;&lt;DisplayOnlyProductsWithoutOptions&gt;False&lt;/DisplayOnlyProductsWithoutOptions&gt;&lt;DisplayProductVariants&gt;False&lt;/DisplayProductVariants&gt;&lt;DisplayStandardProducts&gt;True&lt;/DisplayStandardProducts&gt;&lt;UseGUIDForSelection&gt;True&lt;/UseGUIDForSelection&gt;&lt;/settings&gt;&lt;/field&gt;&lt;field allowempty="true" column="ButtonText" columnsize="20" columntype="text" guid="287cb8e1-1dc5-40a2-90e9-f4b783611f12" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;defaultvalue&gt;Learn more&lt;/defaultvalue&gt;&lt;fieldcaption&gt;Button text&lt;/fieldcaption&gt;&lt;fielddescription&gt;Text displayed on the button.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;AutoCompleteEnableCaching&gt;False&lt;/AutoCompleteEnableCaching&gt;&lt;AutoCompleteFirstRowSelected&gt;False&lt;/AutoCompleteFirstRowSelected&gt;&lt;AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;False&lt;/AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;&lt;controlname&gt;TextBoxControl&lt;/controlname&gt;&lt;FilterMode&gt;False&lt;/FilterMode&gt;&lt;Trim&gt;False&lt;/Trim&gt;&lt;/settings&gt;&lt;/field&gt;&lt;field allowempty="true" column="UTMContent" columnsize="200" columntype="text" guid="58b2a9c9-4224-4cfa-932e-43431b6294c8" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;UTM content&lt;/fieldcaption&gt;&lt;fielddescription&gt;Specifies a UTM parameter for the links in this widget.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;AutoCompleteEnableCaching&gt;False&lt;/AutoCompleteEnableCaching&gt;&lt;AutoCompleteFirstRowSelected&gt;False&lt;/AutoCompleteFirstRowSelected&gt;&lt;AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;False&lt;/AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;&lt;controlname&gt;TextBoxControl&lt;/controlname&gt;&lt;FilterMode&gt;False&lt;/FilterMode&gt;&lt;Trim&gt;False&lt;/Trim&gt;&lt;/settings&gt;&lt;/field&gt;&lt;category name="AlternativeValues"&gt;&lt;properties&gt;&lt;caption&gt;Alternative values&lt;/caption&gt;&lt;collapsedbydefault&gt;True&lt;/collapsedbydefault&gt;&lt;collapsible&gt;True&lt;/collapsible&gt;&lt;visible&gt;True&lt;/visible&gt;&lt;/properties&gt;&lt;/category&gt;&lt;field allowempty="true" column="AlternativeProductImage" columnsize="450" columntype="text" guid="a3e46b24-0864-476a-8cad-e2e051c55d56" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;Alternative product image&lt;/fieldcaption&gt;&lt;fielddescription&gt;Sets a custom product image replacing the default one.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;controlname&gt;MediaSelectionControl&lt;/controlname&gt;&lt;ShowPreview&gt;False&lt;/ShowPreview&gt;&lt;/settings&gt;&lt;/field&gt;&lt;field allowempty="true" column="AlternativeProductName" columnsize="100" columntype="text" guid="0d27ba03-0951-4905-ae9d-bead6efa049a" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;Alternative product name&lt;/fieldcaption&gt;&lt;fielddescription&gt;Sets a custom product name replacing the default one.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;AutoCompleteEnableCaching&gt;False&lt;/AutoCompleteEnableCaching&gt;&lt;AutoCompleteFirstRowSelected&gt;False&lt;/AutoCompleteFirstRowSelected&gt;&lt;AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;False&lt;/AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;&lt;controlname&gt;TextBoxControl&lt;/controlname&gt;&lt;FilterMode&gt;False&lt;/FilterMode&gt;&lt;Trim&gt;False&lt;/Trim&gt;&lt;/settings&gt;&lt;/field&gt;&lt;field allowempty="true" column="AlternativeProductDescription" columntype="longtext" guid="d38ab6c0-083f-4310-ba0f-d40b01577d88" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;Alternative product description&lt;/fieldcaption&gt;&lt;fielddescription&gt;Sets a custom product description replacing the default one.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;controlname&gt;HtmlAreaControl&lt;/controlname&gt;&lt;CSSStylesheet&gt;0&lt;/CSSStylesheet&gt;&lt;Dialogs_Content_Hide&gt;False&lt;/Dialogs_Content_Hide&gt;&lt;HeightUnitType&gt;PX&lt;/HeightUnitType&gt;&lt;MediaDialogConfiguration&gt;True&lt;/MediaDialogConfiguration&gt;&lt;ShowAddStampButton&gt;False&lt;/ShowAddStampButton&gt;&lt;ToolbarSet&gt;EmailWidgets&lt;/ToolbarSet&gt;&lt;Width&gt;100&lt;/Width&gt;&lt;WidthUnitType&gt;PERCENTAGE&lt;/WidthUnitType&gt;&lt;/settings&gt;&lt;/field&gt;&lt;/form&gt;</EmailWidgetProperties>
+    </newsletter_emailwidget>
+    <newsletter_emailwidget>
+      <EmailWidgetID>7</EmailWidgetID>
+      <EmailWidgetGuid>01be8a90-f6bf-4a8c-be2a-fff04dc8950c</EmailWidgetGuid>
+      <EmailWidgetLastModified>2019-06-25T03:08:36.8090187-05:00</EmailWidgetLastModified>
+      <EmailWidgetDisplayName>Image</EmailWidgetDisplayName>
+      <EmailWidgetName>Image</EmailWidgetName>
+      <EmailWidgetDescription>Displays a selected image.</EmailWidgetDescription>
+      <EmailWidgetCode>&lt;table width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+  &lt;tr&gt;
+    &lt;td class="padding" align="center" style="padding: 10px 0 15px 0;"&gt;
+      &lt;img src="{% ImageUrl == String.Empty ? "~/getmedia/b2357cd8-efd2-4484-bf6f-ae650ac6fd38/default-image-product" : ImageUrl |(identity)GlobalAdministrator|(hash)6e53a6bd43b8324563f05415d2f0ae6c3045339b3b2dde2e8f834566975881e7%}" width="500" border="0" alt="{% AlternateText %}" style="display: block; color: #666666;  font-family: Helvetica, arial, sans-serif; font-size: 16px;" class="img-max"&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</EmailWidgetCode>
+      <EmailWidgetSiteID>1</EmailWidgetSiteID>
+      <EmailWidgetIconCssClass>icon-picture</EmailWidgetIconCssClass>
+      <EmailWidgetProperties>&lt;form version="2"&gt;&lt;field column="ImageUrl" columnsize="450" columntype="text" guid="e041f952-98d3-446d-a943-3f6690cc53a4" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;Select an image&lt;/fieldcaption&gt;&lt;fielddescription&gt;URL of the image.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;controlname&gt;MediaSelectionControl&lt;/controlname&gt;&lt;ShowPreview&gt;True&lt;/ShowPreview&gt;&lt;/settings&gt;&lt;/field&gt;&lt;field column="AlternateText" columnsize="50" columntype="text" guid="b2148563-4220-43fb-ae78-50281d6b5faa" publicfield="false" visible="true"&gt;&lt;properties&gt;&lt;fieldcaption&gt;Alternative text&lt;/fieldcaption&gt;&lt;fielddescription&gt;Sets the alternative text for the selected image.&lt;/fielddescription&gt;&lt;/properties&gt;&lt;settings&gt;&lt;AutoCompleteEnableCaching&gt;False&lt;/AutoCompleteEnableCaching&gt;&lt;AutoCompleteFirstRowSelected&gt;False&lt;/AutoCompleteFirstRowSelected&gt;&lt;AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;False&lt;/AutoCompleteShowOnlyCurrentWordInCompletionListItem&gt;&lt;controlname&gt;TextBoxControl&lt;/controlname&gt;&lt;FilterMode&gt;False&lt;/FilterMode&gt;&lt;Trim&gt;False&lt;/Trim&gt;&lt;/settings&gt;&lt;/field&gt;&lt;/form&gt;</EmailWidgetProperties>
+    </newsletter_emailwidget>
+    <newsletter_emailwidgettemplate>
+      <EmailWidgetTemplateID>2</EmailWidgetTemplateID>
+      <EmailWidgetID>1</EmailWidgetID>
+      <TemplateID>3</TemplateID>
+    </newsletter_emailwidgettemplate>
+    <newsletter_emailwidgettemplate>
+      <EmailWidgetTemplateID>1</EmailWidgetTemplateID>
+      <EmailWidgetID>1</EmailWidgetID>
+      <TemplateID>4</TemplateID>
+    </newsletter_emailwidgettemplate>
+    <newsletter_emailwidgettemplate>
+      <EmailWidgetTemplateID>4</EmailWidgetTemplateID>
+      <EmailWidgetID>2</EmailWidgetID>
+      <TemplateID>3</TemplateID>
+    </newsletter_emailwidgettemplate>
+    <newsletter_emailwidgettemplate>
+      <EmailWidgetTemplateID>3</EmailWidgetTemplateID>
+      <EmailWidgetID>2</EmailWidgetID>
+      <TemplateID>4</TemplateID>
+    </newsletter_emailwidgettemplate>
+    <newsletter_emailwidgettemplate>
+      <EmailWidgetTemplateID>6</EmailWidgetTemplateID>
+      <EmailWidgetID>3</EmailWidgetID>
+      <TemplateID>3</TemplateID>
+    </newsletter_emailwidgettemplate>
+    <newsletter_emailwidgettemplate>
+      <EmailWidgetTemplateID>5</EmailWidgetTemplateID>
+      <EmailWidgetID>3</EmailWidgetID>
+      <TemplateID>4</TemplateID>
+    </newsletter_emailwidgettemplate>
+    <newsletter_emailwidgettemplate>
+      <EmailWidgetTemplateID>7</EmailWidgetTemplateID>
+      <EmailWidgetID>4</EmailWidgetID>
+      <TemplateID>3</TemplateID>
+    </newsletter_emailwidgettemplate>
+    <newsletter_emailwidgettemplate>
+      <EmailWidgetTemplateID>8</EmailWidgetTemplateID>
+      <EmailWidgetID>5</EmailWidgetID>
+      <TemplateID>3</TemplateID>
+    </newsletter_emailwidgettemplate>
+    <newsletter_emailwidgettemplate>
+      <EmailWidgetTemplateID>9</EmailWidgetTemplateID>
+      <EmailWidgetID>6</EmailWidgetID>
+      <TemplateID>3</TemplateID>
+    </newsletter_emailwidgettemplate>
+    <newsletter_emailwidgettemplate>
+      <EmailWidgetTemplateID>11</EmailWidgetTemplateID>
+      <EmailWidgetID>7</EmailWidgetID>
+      <TemplateID>3</TemplateID>
+    </newsletter_emailwidgettemplate>
+    <newsletter_emailwidgettemplate>
+      <EmailWidgetTemplateID>10</EmailWidgetTemplateID>
+      <EmailWidgetID>7</EmailWidgetID>
+      <TemplateID>4</TemplateID>
+    </newsletter_emailwidgettemplate>
+  </NewDataSet>
+</newsletter_emailwidget>

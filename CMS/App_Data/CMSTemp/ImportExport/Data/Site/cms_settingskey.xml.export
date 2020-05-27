@@ -1,0 +1,1104 @@
+﻿<cms_settingskey version="12.0">
+  <NewDataSet>
+    <cms_settingskey>
+      <KeyID>70755</KeyID>
+      <KeyName>CMSStoreSendPaymentNotification</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoresendpaymentnotification$}</KeyDisplayName>
+      <KeyValue>True</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>532</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>f050279e-f714-49bb-b2b4-02af8b3c95d2</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.7544701-05:00</KeyLastModified>
+      <KeyDefaultValue>True</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70756</KeyID>
+      <KeyName>CMSStoreInvoiceTemplate</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreinvoicetemplate$}</KeyDisplayName>
+      <KeyValue>&lt;table border="1" cellpadding="5" cellspacing="0" width="600"&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2" height="50" style="padding: 8px" valign="bottom"&gt;
+        &lt;table height="100%" width="100%"&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td style="text-align: left; vertical-align: bottom;"&gt;&lt;span style="font-size: 18pt"&gt;Invoice&lt;/span&gt;&lt;/td&gt;
+              &lt;td style="text-align: center; vertical-align: middle; padding: 8px"&gt;&lt;span style="font-style: italic; font-family: Garamond, Times, serif; font-size: 24pt"&gt;Company logo&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: left; padding: 8px"&gt;
+        &lt;table style="width: 287px; height: 23px"&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td style="text-align: left; color:black; font-weight:bold;"&gt;Invoice number&lt;/td&gt;
+              &lt;td style="text-align: right; padding-right: 10px; padding: 8px"&gt;{% Order.OrderInvoiceNumber|(encode)true |(identity)GlobalAdministrator|(hash)fedb64e8c8a548cb09c6992b810fce177061b3726f00174d92331ec41bb4a24c%}&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+      &lt;td style="text-align: left; padding: 8px"&gt;
+        &lt;table width="100%"&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td style="text-align: left; color:black; font-weight:bold;"&gt;Order date:&lt;/td&gt;
+              &lt;td style="text-align: right; padding: 8px"&gt;{% Order.OrderDate |(identity)GlobalAdministrator|(hash)9d1f938f0736398dca13d82f1756836e70c9cffe70dec578a95097739825e736%}&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: left; vertical-align: top; padding: 8px" width="50%"&gt;&lt;span style="color:black; font-weight:bold"&gt;Supplier&lt;/span&gt;&lt;br /&gt;
+        &amp;nbsp;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Company address&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+      &lt;td style="text-align: left; vertical-align: top; padding: 8px" width="50%"&gt;&lt;span style="color:black; font-weight:bold"&gt;Customer &lt;/span&gt;
+        &lt;p&gt;
+            {% if(!IsNullOrEmpty(Customer.CustomerCompany)) { %} {% Localize(Customer.CustomerCompany)|(encode)true %} &lt;br/&gt; {% } |(identity)GlobalAdministrator|(hash)a5a41ab9b5fd8d8bc43fc6071e52ac747921d3b1932d8b13b0074af565afe143%}
+            {% if(!IsNullOrEmpty(Customer.CustomerTaxRegistrationID)) { %} {%  "Tax registration ID: " + Localize(Customer.CustomerTaxRegistrationID)|(encode)true %} &lt;br/&gt;{% }|(identity)GlobalAdministrator|(hash)76bc143b98845d2d34bac6e26c22e67e4c3448e92d7619115dfd47d51096dc1c%}
+            {% if(!IsNullOrEmpty(Customer.CustomerOrganizationID)) { %} {% "Organization ID: " + Localize(Customer.CustomerOrganizationID)|(encode)true %} &lt;br/&gt;{% } |(identity)GlobalAdministrator|(hash)8a7ef104f9aa12cfdf69ae654c596f2776d7e77977a0675dfd4afc8c040ae53d%}
+            {% Localize(BillingAddress.AddressPersonalName)|(encode)true |(identity)GlobalAdministrator|(hash)4ebcd9411da8573de0f36c951b257299668685d282525c02413a0c36466a3b3c%}&lt;br /&gt;
+            {% Localize(BillingAddress.AddressLine1)|(encode)true |(identity)GlobalAdministrator|(hash)a8a25ce88b118d1aee31838b26779dbd7b5fc883d53280a87551c20f0496c356%}&lt;br /&gt;
+            {% if(!IsNullOrEmpty(BillingAddress.AddressLine2)) { %} {%  Localize(BillingAddress.AddressLine2)|(encode)true %} &lt;br/&gt;{% } |(identity)GlobalAdministrator|(hash)dba6854ef29f7084971d7545505dcf1be4ee6175d9a3673a05ada33b7de2a77b%}
+            {% Localize(BillingAddress.AddressCity)|(encode)true |(identity)GlobalAdministrator|(hash)e41010e9d39487811683cc7de7de1c5b385d9c665bbfb1e1975ee8ef377d0f56%}&lt;br /&gt;
+            {% Localize(BillingAddress.AddressZip)|(encode)true |(identity)GlobalAdministrator|(hash)03078495685da912ab60eb56904fb023b48a28f90f3074709932c4cf835a5c95%}&lt;br /&gt;
+            {% Localize(BillingAddress.Country.CountryDisplayName)|(encode)true |(identity)GlobalAdministrator|(hash)cb553840deae8bc504fb193956622b3e3189ada34ddfe26548dc1dabc8a59732%}{% if(BillingAddress.State != null) { ", " + Localize(BillingAddress.State.StateDisplayName) }|(encode)true |(identity)GlobalAdministrator|(hash)4b6f853957a29c9580125ed1fb0c49f3294e7106b02385b66679306be7a4c970%}
+        &lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2"&gt;
+        &lt;table width="100%"&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td style="text-align: left; padding: 8px"&gt;&lt;span style="color:black; font-weight:bold"&gt;Payment option&lt;/span&gt;&lt;/td&gt;
+              &lt;td style="text-align: left; padding: 8px"&gt;{% PaymentOption.PaymentOptionDisplayName |(identity)GlobalAdministrator|(hash)709a5f167e6d35d051a039efdf0c1b0f392570317222af5c118a42f1877d7a03%}&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2" style="text-align: left; padding: 8px"&gt;
+        &lt;table class="productsList" width="100%" cellspacing="0" cellpadding="2" style="text-align: right"&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;
+              &lt;th style="text-align: left; padding-top: 21px;"&gt;{$ InvoiceTemplate.SKUName $}&lt;/th&gt;
+              &lt;th style="text-align: right; padding: 21px 2px 2px 2px;"&gt;{$ InvoiceTemplate.SKUUnits $}&lt;/th&gt;
+              &lt;th style="text-align: right; padding-top: 21px;"&gt;{$ InvoiceTemplate.SKUPrice $}&lt;/th&gt;
+              &lt;th style="text-align: right; padding-top: 21px;"&gt;{$ InvoiceTemplate.Subtotal $}&lt;/th&gt;
+            &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            {% foreach(item in ContentTable) { %}
+              &lt;tr&gt;
+                &lt;td style="text-align: left;"&gt;{%(item.IsProductOption) ? "&amp;nbsp;&amp;nbsp;&amp;nbsp;" : ""%}{% Localize(item.SKUName)|(encode)true %}
+                {% (item.CartItemText != "") ? " '" + item.CartItemText + "' " : "" |(encode)true %}
+                {% item.SKUNumber|(encode)true %}&lt;/td&gt;
+                &lt;td style="text-align: right; vertical-align: top;"&gt;{%(item.IsProductOption &amp;&amp; !item.IsAccessoryProduct) ? "" : item.Units %}&lt;/td&gt;
+                &lt;td style="text-align: right; vertical-align: top;"&gt;{%(item.IsProductOption &amp;&amp; !item.IsAccessoryProduct) ? "" : (item.UnitPrice - item.UnitTotalDiscount).Format(Currency.CurrencyFormatString)|(encode)true #%}&lt;/td&gt;
+                &lt;td style="text-align: right; vertical-align: top;"&gt;{%(item.IsProductOption &amp;&amp; !item.IsAccessoryProduct) ? "" : item.TotalPrice.Format(Currency.CurrencyFormatString)|(encode)true #%}&lt;/td&gt;
+              &lt;/tr&gt;
+            {% } |(identity)GlobalAdministrator|(hash)698e6c8ed6aa852360ce8bc5fa4693c3b3640a0b0f4c258332b4865107fbe2fc%}
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;hr size="1" /&gt;
+        &lt;table cellpadding="5" style="float: right;" width="60%"&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Subtotal&lt;/td&gt;
+              &lt;td style="text-align: right; padding-right: 0px"&gt;{% TotalItemsPrice.Format(Currency.CurrencyFormatString)|(encode)true |(identity)GlobalAdministrator|(hash)ba2c9c2158506bcc675b32328f61e470e64f786bf1c91efdf4927c546545a146%}&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td colspan="2" style="padding: 0; text-align: right;"&gt;
+                {% if(OrderDiscountSummary.Any()) { %}
+                &lt;table width="100%" cellspacing="0" cellpadding="0" style="text-align: right; width: 100%;"&gt;
+                  &lt;tbody&gt;
+                    {% foreach(discountItem in OrderDiscountSummary) { %}
+                    &lt;tr&gt;
+                      &lt;td style="padding: 0px 8px 0px 5px; text-align: left;"&gt;{% Localize(discountItem.Name)|(encode)true %}&lt;/td&gt;
+                      &lt;td style="vertical-align: top; text-align: right;"&gt;&amp;#8209;&amp;nbsp;{% discountItem.Value.Format(Currency.CurrencyFormatString)|(encode)true #%}&lt;/td&gt;
+                    &lt;/tr&gt;
+                    {% } %}
+                  &lt;/tbody&gt;
+                &lt;/table&gt;
+                {% } |(identity)GlobalAdministrator|(hash)8b0d8347239600eca93fed14ffeee5f188d0e7af2e9719a27b35c001a8df7908%}
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Shipping&lt;/td&gt;
+              &lt;td style="text-align: right; padding-right: 0px"&gt;{% TotalShipping.Format(Currency.CurrencyFormatString)|(encode)true |(identity)GlobalAdministrator|(hash)ab1d5d7ef65433e8709b6515e1dce470665e24cf491b96cc58b8059685c58375%}&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td colspan="2" style="padding: 0; text-align: right;"&gt;
+                {% if(OtherPaymentsSummary.Any()) { %}
+                &lt;table width="100%" cellspacing="0" cellpadding="0" style="text-align: right; width: 100%;"&gt;
+                  &lt;tbody&gt;
+                    {% foreach(discountItem in OtherPaymentsSummary) { %}
+                    &lt;tr&gt;
+                      &lt;td style="padding: 0px 8px 0px 5px; text-align: left;"&gt;{% Localize(discountItem.Name)|(encode)true %}&lt;/td&gt;
+                      &lt;td style="vertical-align: top; text-align: right;"&gt;&amp;#8209;&amp;nbsp;{% discountItem.Value.Format(Currency.CurrencyFormatString)|(encode)true #%}&lt;/td&gt;
+                    &lt;/tr&gt;
+                    {% } %}
+                  &lt;/tbody&gt;
+                &lt;/table&gt;
+                {% } |(identity)GlobalAdministrator|(hash)fa927f07c469e626d13cf6f0f1b3bbb8dd4552954cf3e63143d4778a15e3b53d%}
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;&lt;span style="color:black; font-weight:bold"&gt;TOTAL (incl. tax):&lt;/span&gt;&lt;/td&gt;
+              &lt;td style="text-align: right; padding-right: 0px; color:black; font-weight:bold"&gt;{% GrandTotal.Format(Currency.CurrencyFormatString)|(encode)true |(identity)GlobalAdministrator|(hash)f17157c543f57233c7d07aa1376cb586303eb9783d98d924e0137b787d7de82d%}&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2"&gt;
+        &lt;table width="50%"&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td style="text-align: left; padding: 8px"&gt;&lt;span style="color:black; font-weight:bold"&gt;Tax summary&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style="text-align: left;"&gt;
+                {% if(TaxSummary.Any()) { %}
+                &lt;table width="100%" cellspacing="0" cellpadding="0" style="text-align: right; width: 100%;"&gt;
+                  &lt;tbody&gt;
+                    {% foreach(taxItem in TaxSummary) { %}
+                    &lt;tr&gt;
+                      &lt;td style="padding: 0px 8px 0px 5px; text-align: left;"&gt;{% Localize(taxItem.Name)|(encode)true %}&lt;/td&gt;
+                      &lt;td style="vertical-align: top; text-align: right;"&gt;{% taxItem.Value.Format(Currency.CurrencyFormatString)|(encode)true #%}&lt;/td&gt;
+                    &lt;/tr&gt;
+                    {% } %}
+                  &lt;/tbody&gt;
+                &lt;/table&gt;
+                {% } |(identity)GlobalAdministrator|(hash)f304a5fb2b30d91222de8f3713e93dce8375dc113d8ce7dacf532d29e3de77d7%}
+              &lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</KeyValue>
+      <KeyType>string</KeyType>
+      <KeyCategoryID>446</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>5619d67a-47c0-4678-8049-07f76afa57f5</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.7744422-05:00</KeyLastModified>
+      <KeyDefaultValue>&lt;table border="1" cellpadding="5" cellspacing="0" width="600"&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2" height="50" style="padding: 8px" valign="bottom"&gt;
+        &lt;table height="100%" width="100%"&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td style="text-align: left; vertical-align: bottom;"&gt;&lt;span style="font-size: 18pt"&gt;Invoice&lt;/span&gt;&lt;/td&gt;
+              &lt;td style="text-align: center; vertical-align: middle; padding: 8px"&gt;&lt;span style="font-style: italic; font-family: Garamond, Times, serif; font-size: 24pt"&gt;Company logo&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: left; padding: 8px"&gt;
+        &lt;table style="width: 287px; height: 23px"&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td style="text-align: left; color:black; font-weight:bold;"&gt;Invoice number&lt;/td&gt;
+              &lt;td style="text-align: right; padding-right: 10px; padding: 8px"&gt;{% Order.OrderInvoiceNumber|(encode)true |(identity)GlobalAdministrator|(hash)fedb64e8c8a548cb09c6992b810fce177061b3726f00174d92331ec41bb4a24c%}&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+      &lt;td style="text-align: left; padding: 8px"&gt;
+        &lt;table width="100%"&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td style="text-align: left; color:black; font-weight:bold;"&gt;Order date:&lt;/td&gt;
+              &lt;td style="text-align: right; padding: 8px"&gt;{% Order.OrderDate |(identity)GlobalAdministrator|(hash)9d1f938f0736398dca13d82f1756836e70c9cffe70dec578a95097739825e736%}&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: left; vertical-align: top; padding: 8px" width="50%"&gt;&lt;span style="color:black; font-weight:bold"&gt;Supplier&lt;/span&gt;&lt;br /&gt;
+        &amp;nbsp;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Company address&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+      &lt;td style="text-align: left; vertical-align: top; padding: 8px" width="50%"&gt;&lt;span style="color:black; font-weight:bold"&gt;Customer &lt;/span&gt;
+        &lt;p&gt;
+            {% if(!IsNullOrEmpty(Customer.CustomerCompany)) { %} {% Localize(Customer.CustomerCompany)|(encode)true %} &lt;br/&gt; {% } |(identity)GlobalAdministrator|(hash)a5a41ab9b5fd8d8bc43fc6071e52ac747921d3b1932d8b13b0074af565afe143%}
+            {% if(!IsNullOrEmpty(Customer.CustomerTaxRegistrationID)) { %} {%  "Tax registration ID: " + Localize(Customer.CustomerTaxRegistrationID)|(encode)true %} &lt;br/&gt;{% }|(identity)GlobalAdministrator|(hash)76bc143b98845d2d34bac6e26c22e67e4c3448e92d7619115dfd47d51096dc1c%}
+            {% if(!IsNullOrEmpty(Customer.CustomerOrganizationID)) { %} {% "Organization ID: " + Localize(Customer.CustomerOrganizationID)|(encode)true %} &lt;br/&gt;{% } |(identity)GlobalAdministrator|(hash)8a7ef104f9aa12cfdf69ae654c596f2776d7e77977a0675dfd4afc8c040ae53d%}
+            {% Localize(BillingAddress.AddressPersonalName)|(encode)true |(identity)GlobalAdministrator|(hash)4ebcd9411da8573de0f36c951b257299668685d282525c02413a0c36466a3b3c%}&lt;br /&gt;
+            {% Localize(BillingAddress.AddressLine1)|(encode)true |(identity)GlobalAdministrator|(hash)a8a25ce88b118d1aee31838b26779dbd7b5fc883d53280a87551c20f0496c356%}&lt;br /&gt;
+            {% if(!IsNullOrEmpty(BillingAddress.AddressLine2)) { %} {%  Localize(BillingAddress.AddressLine2)|(encode)true %} &lt;br/&gt;{% } |(identity)GlobalAdministrator|(hash)dba6854ef29f7084971d7545505dcf1be4ee6175d9a3673a05ada33b7de2a77b%}
+            {% Localize(BillingAddress.AddressCity)|(encode)true |(identity)GlobalAdministrator|(hash)e41010e9d39487811683cc7de7de1c5b385d9c665bbfb1e1975ee8ef377d0f56%}&lt;br /&gt;
+            {% Localize(BillingAddress.AddressZip)|(encode)true |(identity)GlobalAdministrator|(hash)03078495685da912ab60eb56904fb023b48a28f90f3074709932c4cf835a5c95%}&lt;br /&gt;
+            {% Localize(BillingAddress.Country.CountryDisplayName)|(encode)true |(identity)GlobalAdministrator|(hash)cb553840deae8bc504fb193956622b3e3189ada34ddfe26548dc1dabc8a59732%}{% if(BillingAddress.State != null) { ", " + Localize(BillingAddress.State.StateDisplayName) }|(encode)true |(identity)GlobalAdministrator|(hash)4b6f853957a29c9580125ed1fb0c49f3294e7106b02385b66679306be7a4c970%}
+        &lt;/p&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2"&gt;
+        &lt;table width="100%"&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td style="text-align: left; padding: 8px"&gt;&lt;span style="color:black; font-weight:bold"&gt;Payment option&lt;/span&gt;&lt;/td&gt;
+              &lt;td style="text-align: left; padding: 8px"&gt;{% PaymentOption.PaymentOptionDisplayName |(identity)GlobalAdministrator|(hash)709a5f167e6d35d051a039efdf0c1b0f392570317222af5c118a42f1877d7a03%}&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2" style="text-align: left; padding: 8px"&gt;
+        &lt;table class="productsList" width="100%" cellspacing="0" cellpadding="2" style="text-align: right"&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;
+              &lt;th style="text-align: left; padding-top: 21px;"&gt;{$ InvoiceTemplate.SKUName $}&lt;/th&gt;
+              &lt;th style="text-align: right; padding: 21px 2px 2px 2px;"&gt;{$ InvoiceTemplate.SKUUnits $}&lt;/th&gt;
+              &lt;th style="text-align: right; padding-top: 21px;"&gt;{$ InvoiceTemplate.SKUPrice $}&lt;/th&gt;
+              &lt;th style="text-align: right; padding-top: 21px;"&gt;{$ InvoiceTemplate.Subtotal $}&lt;/th&gt;
+            &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            {% foreach(item in ContentTable) { %}
+              &lt;tr&gt;
+                &lt;td style="text-align: left;"&gt;{%(item.IsProductOption) ? "&amp;nbsp;&amp;nbsp;&amp;nbsp;" : ""%}{% Localize(item.SKUName)|(encode)true %}
+                {% (item.CartItemText != "") ? " '" + item.CartItemText + "' " : "" |(encode)true %}
+                {% item.SKUNumber|(encode)true %}&lt;/td&gt;
+                &lt;td style="text-align: right; vertical-align: top;"&gt;{%(item.IsProductOption &amp;&amp; !item.IsAccessoryProduct) ? "" : item.Units %}&lt;/td&gt;
+                &lt;td style="text-align: right; vertical-align: top;"&gt;{%(item.IsProductOption &amp;&amp; !item.IsAccessoryProduct) ? "" : (item.UnitPrice - item.UnitTotalDiscount).Format(Currency.CurrencyFormatString)|(encode)true #%}&lt;/td&gt;
+                &lt;td style="text-align: right; vertical-align: top;"&gt;{%(item.IsProductOption &amp;&amp; !item.IsAccessoryProduct) ? "" : item.TotalPrice.Format(Currency.CurrencyFormatString)|(encode)true #%}&lt;/td&gt;
+              &lt;/tr&gt;
+            {% } |(identity)GlobalAdministrator|(hash)698e6c8ed6aa852360ce8bc5fa4693c3b3640a0b0f4c258332b4865107fbe2fc%}
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;hr size="1" /&gt;
+        &lt;table cellpadding="5" style="float: right;" width="60%"&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Subtotal&lt;/td&gt;
+              &lt;td style="text-align: right; padding-right: 0px"&gt;{% TotalItemsPrice.Format(Currency.CurrencyFormatString)|(encode)true |(identity)GlobalAdministrator|(hash)ba2c9c2158506bcc675b32328f61e470e64f786bf1c91efdf4927c546545a146%}&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td colspan="2" style="padding: 0; text-align: right;"&gt;
+                {% if(OrderDiscountSummary.Any()) { %}
+                &lt;table width="100%" cellspacing="0" cellpadding="0" style="text-align: right; width: 100%;"&gt;
+                  &lt;tbody&gt;
+                    {% foreach(discountItem in OrderDiscountSummary) { %}
+                    &lt;tr&gt;
+                      &lt;td style="padding: 0px 8px 0px 5px; text-align: left;"&gt;{% Localize(discountItem.Name)|(encode)true %}&lt;/td&gt;
+                      &lt;td style="vertical-align: top; text-align: right;"&gt;&amp;#8209;&amp;nbsp;{% discountItem.Value.Format(Currency.CurrencyFormatString)|(encode)true #%}&lt;/td&gt;
+                    &lt;/tr&gt;
+                    {% } %}
+                  &lt;/tbody&gt;
+                &lt;/table&gt;
+                {% } |(identity)GlobalAdministrator|(hash)8b0d8347239600eca93fed14ffeee5f188d0e7af2e9719a27b35c001a8df7908%}
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Shipping&lt;/td&gt;
+              &lt;td style="text-align: right; padding-right: 0px"&gt;{% TotalShipping.Format(Currency.CurrencyFormatString)|(encode)true |(identity)GlobalAdministrator|(hash)ab1d5d7ef65433e8709b6515e1dce470665e24cf491b96cc58b8059685c58375%}&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td colspan="2" style="padding: 0; text-align: right;"&gt;
+                {% if(OtherPaymentsSummary.Any()) { %}
+                &lt;table width="100%" cellspacing="0" cellpadding="0" style="text-align: right; width: 100%;"&gt;
+                  &lt;tbody&gt;
+                    {% foreach(discountItem in OtherPaymentsSummary) { %}
+                    &lt;tr&gt;
+                      &lt;td style="padding: 0px 8px 0px 5px; text-align: left;"&gt;{% Localize(discountItem.Name)|(encode)true %}&lt;/td&gt;
+                      &lt;td style="vertical-align: top; text-align: right;"&gt;&amp;#8209;&amp;nbsp;{% discountItem.Value.Format(Currency.CurrencyFormatString)|(encode)true #%}&lt;/td&gt;
+                    &lt;/tr&gt;
+                    {% } %}
+                  &lt;/tbody&gt;
+                &lt;/table&gt;
+                {% } |(identity)GlobalAdministrator|(hash)fa927f07c469e626d13cf6f0f1b3bbb8dd4552954cf3e63143d4778a15e3b53d%}
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;&lt;span style="color:black; font-weight:bold"&gt;TOTAL (incl. tax):&lt;/span&gt;&lt;/td&gt;
+              &lt;td style="text-align: right; padding-right: 0px; color:black; font-weight:bold"&gt;{% GrandTotal.Format(Currency.CurrencyFormatString)|(encode)true |(identity)GlobalAdministrator|(hash)f17157c543f57233c7d07aa1376cb586303eb9783d98d924e0137b787d7de82d%}&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2"&gt;
+        &lt;table width="50%"&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td style="text-align: left; padding: 8px"&gt;&lt;span style="color:black; font-weight:bold"&gt;Tax summary&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style="text-align: left;"&gt;
+                {% if(TaxSummary.Any()) { %}
+                &lt;table width="100%" cellspacing="0" cellpadding="0" style="text-align: right; width: 100%;"&gt;
+                  &lt;tbody&gt;
+                    {% foreach(taxItem in TaxSummary) { %}
+                    &lt;tr&gt;
+                      &lt;td style="padding: 0px 8px 0px 5px; text-align: left;"&gt;{% Localize(taxItem.Name)|(encode)true %}&lt;/td&gt;
+                      &lt;td style="vertical-align: top; text-align: right;"&gt;{% taxItem.Value.Format(Currency.CurrencyFormatString)|(encode)true #%}&lt;/td&gt;
+                    &lt;/tr&gt;
+                    {% } %}
+                  &lt;/tbody&gt;
+                &lt;/table&gt;
+                {% } |(identity)GlobalAdministrator|(hash)f304a5fb2b30d91222de8f3713e93dce8375dc113d8ce7dacf532d29e3de77d7%}
+              &lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</KeyDefaultValue>
+      <KeyIsHidden>true</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70757</KeyID>
+      <KeyName>CMSContentPersonalizationEnabled</KeyName>
+      <KeyDisplayName>{$settingskey.cmscontentpersonalizationenabled$}</KeyDisplayName>
+      <KeyValue>True</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>617</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>9ff57f93-ff00-4a45-ab04-08d00d488a9a</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.7874397-05:00</KeyLastModified>
+      <KeyDefaultValue>True</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70758</KeyID>
+      <KeyName>CMSStoreAllowGlobalProductOptions</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreallowglobalproductoptions$}</KeyDisplayName>
+      <KeyValue>False</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>564</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>c0c727e2-eec5-4a45-a82f-2a0cf75be4f8</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.7994405-05:00</KeyLastModified>
+      <KeyDefaultValue>False</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70759</KeyID>
+      <KeyName>CMSStoreUseGlobalPublicStatus</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreuseglobalpublicstatus$}</KeyDisplayName>
+      <KeyValue>False</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>565</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>fe8cca4f-f49b-425a-92dd-430052c88ccc</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.8104387-05:00</KeyLastModified>
+      <KeyDefaultValue>False</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70760</KeyID>
+      <KeyName>CMSPOP3ServerPort</KeyName>
+      <KeyDisplayName>{$settingskey.cmspop3serverport$}</KeyDisplayName>
+      <KeyValue>110</KeyValue>
+      <KeyType>int</KeyType>
+      <KeyCategoryID>580</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>3c68f5e9-3b41-40e8-835f-526f06e75794</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.8234391-05:00</KeyLastModified>
+      <KeyDefaultValue>110</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70761</KeyID>
+      <KeyName>CMSEnableOnlineMarketing</KeyName>
+      <KeyDisplayName>{$settingskey.cmsenableonlinemarketing$}</KeyDisplayName>
+      <KeyValue>True</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>611</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>d9e46c7d-deea-40e1-998c-6e6163767029</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.837439-05:00</KeyLastModified>
+      <KeyDefaultValue>True</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70762</KeyID>
+      <KeyName>CMSPOP3Password</KeyName>
+      <KeyDisplayName>{$settingskey.cmspop3password$}</KeyDisplayName>
+      <KeyValue></KeyValue>
+      <KeyType>string</KeyType>
+      <KeyCategoryID>580</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>ef9e4404-69ae-40c5-8f23-76d1be79afcf</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.8484373-05:00</KeyLastModified>
+      <KeyDefaultValue></KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70763</KeyID>
+      <KeyName>CMSStoreUseGlobalOrderStatus</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreuseglobalorderstatus$}</KeyDisplayName>
+      <KeyValue>False</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>565</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>6d293713-9c22-4bfe-8720-78116dd638f3</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.858443-05:00</KeyLastModified>
+      <KeyDefaultValue>False</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70764</KeyID>
+      <KeyName>CMSOptInApprovalURL</KeyName>
+      <KeyDisplayName>{$settingskey.cmsoptinapprovalurl$}</KeyDisplayName>
+      <KeyValue>~/en-us/Subscription/ConfirmSubscription</KeyValue>
+      <KeyType>string</KeyType>
+      <KeyCategoryID>256</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>d461794f-4e9a-4186-b42e-79f44236d73a</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.8684384-05:00</KeyLastModified>
+      <KeyDefaultValue>~/en-us/Subscription/ConfirmSubscription</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70765</KeyID>
+      <KeyName>CMSStoreAllowGlobalSuppliers</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreallowglobalsuppliers$}</KeyDisplayName>
+      <KeyValue>False</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>564</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>0b74da96-45fe-445e-a002-7b16143875d1</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.8754375-05:00</KeyLastModified>
+      <KeyDefaultValue>False</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70766</KeyID>
+      <KeyName>CMSABTestingEnabled</KeyName>
+      <KeyDisplayName>{$settingskey.cmsabtestingenabled$}</KeyDisplayName>
+      <KeyValue>True</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>646</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>93c7f880-6980-439c-8fae-840217c19c75</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.8784357-05:00</KeyLastModified>
+      <KeyDefaultValue>True</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70767</KeyID>
+      <KeyName>CMSStoreAllowGlobalManufacturers</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreallowglobalmanufacturers$}</KeyDisplayName>
+      <KeyValue>False</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>564</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>b7e59e3c-96cf-4153-931b-9879c4e8a584</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.8884375-05:00</KeyLastModified>
+      <KeyDefaultValue>False</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70768</KeyID>
+      <KeyName>CMSStoreAllowGlobalPaymentMethods</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreallowglobalpaymentmethods$}</KeyDisplayName>
+      <KeyValue>False</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>564</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>25be4a28-5529-441d-9907-a4628762fc75</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.8944367-05:00</KeyLastModified>
+      <KeyDefaultValue>False</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70769</KeyID>
+      <KeyName>CMSWebAnalyticsUseJavascriptLogging</KeyName>
+      <KeyDisplayName>{$settingskey.cmswebanalyticsusejavascriptlogging$}</KeyDisplayName>
+      <KeyValue>True</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>257</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>6b62fd9a-1385-49e7-8c49-a6fdb950865b</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.9024382-05:00</KeyLastModified>
+      <KeyDefaultValue>True</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70770</KeyID>
+      <KeyName>CMSStoreUseGlobalExchangeRates</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreuseglobalexchangerates$}</KeyDisplayName>
+      <KeyValue>False</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>565</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>791be29c-29e1-4ae7-a3e5-aa89c66076a7</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.9114359-05:00</KeyLastModified>
+      <KeyDefaultValue>False</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70771</KeyID>
+      <KeyName>CMSStoreAllowGlobalDepartments</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreallowglobaldepartments$}</KeyDisplayName>
+      <KeyValue>False</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>564</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>52543803-97a6-49b2-b4cd-b08e8db4a4d0</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.9174378-05:00</KeyLastModified>
+      <KeyDefaultValue>False</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70772</KeyID>
+      <KeyName>CMSStoreUseGlobalInvoice</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreuseglobalinvoice$}</KeyDisplayName>
+      <KeyValue>False</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>565</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>d4bcf42a-5c21-4893-8bb4-b5c5c32a0f55</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.9214387-05:00</KeyLastModified>
+      <KeyDefaultValue>False</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70773</KeyID>
+      <KeyName>CMSStoreUseGlobalTaxClasses</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreuseglobaltaxclasses$}</KeyDisplayName>
+      <KeyValue>False</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>565</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>82abee0d-a2f6-4eef-bd7e-c730709cbc44</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.9304693-05:00</KeyLastModified>
+      <KeyDefaultValue>False</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70774</KeyID>
+      <KeyName>CMSStoreProductsStartingPath</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreproductsstartingpath$}</KeyDisplayName>
+      <KeyValue>/Products</KeyValue>
+      <KeyType>string</KeyType>
+      <KeyCategoryID>704</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>78695787-f76e-4893-9e4e-c8d057b9d53e</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.9374402-05:00</KeyLastModified>
+      <KeyDefaultValue>/Products</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70775</KeyID>
+      <KeyName>CMSNewsletterUnsubscriptionURL</KeyName>
+      <KeyDisplayName>{$settingskey.cmsnewsletterunsubscriptionurl$}</KeyDisplayName>
+      <KeyValue>~/en-us/Subscription/Unsubscribe</KeyValue>
+      <KeyType>string</KeyType>
+      <KeyCategoryID>256</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>39a299d4-3760-4acc-a45d-d753e5eacf55</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.9434742-05:00</KeyLastModified>
+      <KeyDefaultValue>~/en-us/Subscription/Unsubscribe</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70776</KeyID>
+      <KeyName>CMSStoreSendOrderNotification</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoresendordernotification$}</KeyDisplayName>
+      <KeyValue>True</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>532</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>88b10c95-4efe-4caf-be6b-d7ea8a3af31c</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.9494706-05:00</KeyLastModified>
+      <KeyDefaultValue>True</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70777</KeyID>
+      <KeyName>CMSStoreAllowGlobalProducts</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreallowglobalproducts$}</KeyDisplayName>
+      <KeyValue>False</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>564</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>9f558b83-c41b-4313-a82a-d9d3b3bcc346</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.9554719-05:00</KeyLastModified>
+      <KeyDefaultValue>False</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70778</KeyID>
+      <KeyName>CMSArchiveEmails</KeyName>
+      <KeyDisplayName>{$settingskey.cmsarchiveemails$}</KeyDisplayName>
+      <KeyValue>1</KeyValue>
+      <KeyType>int</KeyType>
+      <KeyCategoryID>523</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>7783372a-fb9f-4a1d-a8a8-dc4bced4e901</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.9594736-05:00</KeyLastModified>
+      <KeyDefaultValue>1</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70779</KeyID>
+      <KeyName>CMSAlternativeUrlUIEnabled</KeyName>
+      <KeyDisplayName>{$settingskey.cmsalternativeurluienabled$}</KeyDisplayName>
+      <KeyValue>True</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>1102</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>916693ba-a2e5-4f9b-90dd-dd2d609e113d</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.96844-05:00</KeyLastModified>
+      <KeyDefaultValue>True</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70780</KeyID>
+      <KeyName>CMSFriendlyURLExtension</KeyName>
+      <KeyDisplayName>{$settingskey.cmsfriendlyurlextension$}</KeyDisplayName>
+      <KeyValue></KeyValue>
+      <KeyType>string</KeyType>
+      <KeyCategoryID>241</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>067588e9-9030-4c34-a973-df6e12846c41</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.97447-05:00</KeyLastModified>
+      <KeyDefaultValue></KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70781</KeyID>
+      <KeyName>CMSUsePermanentURLs</KeyName>
+      <KeyDisplayName>{$settingskey.cmsusepermanenturls$}</KeyDisplayName>
+      <KeyValue>True</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>566</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>dc65952d-67da-431a-a207-e3b5e9041e7e</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.9804702-05:00</KeyLastModified>
+      <KeyDefaultValue>True</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70782</KeyID>
+      <KeyName>CMSFilesFriendlyURLExtension</KeyName>
+      <KeyDisplayName>{$settingskey.cmsfilesfriendlyurlextension$}</KeyDisplayName>
+      <KeyValue></KeyValue>
+      <KeyType>string</KeyType>
+      <KeyCategoryID>241</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>9e987e64-912a-4a0e-bedd-e8c5bdd405e5</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.9834438-05:00</KeyLastModified>
+      <KeyDefaultValue></KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70783</KeyID>
+      <KeyName>CMSStoreUseGlobalInternalStatus</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreuseglobalinternalstatus$}</KeyDisplayName>
+      <KeyValue>False</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>565</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>21a9446a-cf1e-42f4-a3bf-eeb87d3006ff</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.989442-05:00</KeyLastModified>
+      <KeyDefaultValue>False</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70784</KeyID>
+      <KeyName>CMSStoreUseGlobalCurrencies</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreuseglobalcurrencies$}</KeyDisplayName>
+      <KeyValue>False</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>565</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>06401a2e-5aa1-40f5-85e6-f7b973abe2a4</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.9974352-05:00</KeyLastModified>
+      <KeyDefaultValue>False</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70785</KeyID>
+      <KeyName>CMSStoreUseGlobalCredit</KeyName>
+      <KeyDisplayName>{$settingskey.cmsstoreuseglobalcredit$}</KeyDisplayName>
+      <KeyValue>False</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>565</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>3763325a-c1a7-4bd1-858a-ff3f0acacb8a</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:26.9994352-05:00</KeyLastModified>
+      <KeyDefaultValue>False</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingskey>
+      <KeyID>70786</KeyID>
+      <KeyName>CMSMVTEnabled</KeyName>
+      <KeyDisplayName>{$settingskey.cmsmvtenabled$}</KeyDisplayName>
+      <KeyValue>True</KeyValue>
+      <KeyType>boolean</KeyType>
+      <KeyCategoryID>646</KeyCategoryID>
+      <SiteID>1</SiteID>
+      <KeyGUID>2b53dd8a-c577-4c83-b4a8-ff986a46f7f6</KeyGUID>
+      <KeyLastModified>2020-05-21T15:02:27.0094384-05:00</KeyLastModified>
+      <KeyDefaultValue>True</KeyDefaultValue>
+      <KeyIsHidden>false</KeyIsHidden>
+    </cms_settingskey>
+    <cms_settingscategory>
+      <CategoryID>150</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmssettings$}</CategoryDisplayName>
+      <CategoryOrder>0</CategoryOrder>
+      <CategoryName>CMS.Settings</CategoryName>
+      <CategoryIDPath>/00000150</CategoryIDPath>
+      <CategoryLevel>0</CategoryLevel>
+      <CategoryChildCount>11</CategoryChildCount>
+      <CategoryIsGroup>false</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>325</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>11</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsurl$}</CategoryDisplayName>
+      <CategoryOrder>3</CategoryOrder>
+      <CategoryName>CMS.URLs</CategoryName>
+      <CategoryParentID>150</CategoryParentID>
+      <CategoryIDPath>/00000150/00000011</CategoryIDPath>
+      <CategoryLevel>1</CategoryLevel>
+      <CategoryChildCount>6</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>false</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>325</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>9</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmssystem$}</CategoryDisplayName>
+      <CategoryOrder>5</CategoryOrder>
+      <CategoryName>CMS.System</CategoryName>
+      <CategoryParentID>150</CategoryParentID>
+      <CategoryIDPath>/00000150/00000009</CategoryIDPath>
+      <CategoryLevel>1</CategoryLevel>
+      <CategoryChildCount>16</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>false</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>325</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>555</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsonlinemarketing$}</CategoryDisplayName>
+      <CategoryOrder>6</CategoryOrder>
+      <CategoryName>CMS.OnlineMarketing</CategoryName>
+      <CategoryParentID>150</CategoryParentID>
+      <CategoryIDPath>/00000150/00000555</CategoryIDPath>
+      <CategoryLevel>1</CategoryLevel>
+      <CategoryChildCount>7</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>false</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>196</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>18</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsecommerce$}</CategoryDisplayName>
+      <CategoryOrder>7</CategoryOrder>
+      <CategoryName>CMS.ECommerce</CategoryName>
+      <CategoryParentID>150</CategoryParentID>
+      <CategoryIDPath>/00000150/00000018</CategoryIDPath>
+      <CategoryLevel>1</CategoryLevel>
+      <CategoryChildCount>14</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>false</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>111</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>446</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsecommerceaccounts$}</CategoryDisplayName>
+      <CategoryOrder>9</CategoryOrder>
+      <CategoryName>CMS.Ecommerce.Accounts</CategoryName>
+      <CategoryParentID>18</CategoryParentID>
+      <CategoryIDPath>/00000150/00000018/00000446</CategoryIDPath>
+      <CategoryLevel>2</CategoryLevel>
+      <CategoryChildCount>0</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>true</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>111</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>532</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsecommerceemails$}</CategoryDisplayName>
+      <CategoryOrder>12</CategoryOrder>
+      <CategoryName>CMS.Ecommerce.Emails</CategoryName>
+      <CategoryParentID>18</CategoryParentID>
+      <CategoryIDPath>/00000150/00000018/00000532</CategoryIDPath>
+      <CategoryLevel>2</CategoryLevel>
+      <CategoryChildCount>0</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>true</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>111</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>617</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsonlinemarketingcontentpersonalization$}</CategoryDisplayName>
+      <CategoryOrder>3</CategoryOrder>
+      <CategoryName>CMS.OnlineMarketing.ContentPersonalization</CategoryName>
+      <CategoryParentID>555</CategoryParentID>
+      <CategoryIDPath>/00000150/00000555/00000617</CategoryIDPath>
+      <CategoryLevel>2</CategoryLevel>
+      <CategoryChildCount>0</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>true</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>196</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>566</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsurldocuments$}</CategoryDisplayName>
+      <CategoryOrder>2</CategoryOrder>
+      <CategoryName>CMS.URL.Documents</CategoryName>
+      <CategoryParentID>11</CategoryParentID>
+      <CategoryIDPath>/00000150/00000011/00000566</CategoryIDPath>
+      <CategoryLevel>2</CategoryLevel>
+      <CategoryChildCount>0</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>true</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>325</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>646</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsonlinemarketingoptimization$}</CategoryDisplayName>
+      <CategoryOrder>2</CategoryOrder>
+      <CategoryName>CMS.OnlineMarketing.Optimization</CategoryName>
+      <CategoryParentID>555</CategoryParentID>
+      <CategoryIDPath>/00000150/00000555/00000646</CategoryIDPath>
+      <CategoryLevel>2</CategoryLevel>
+      <CategoryChildCount>0</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>true</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>196</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>1102</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsurlalternativeurlmvc$}</CategoryDisplayName>
+      <CategoryOrder>0</CategoryOrder>
+      <CategoryName>CMS.URL.AlternativeURLMvc</CategoryName>
+      <CategoryParentID>11</CategoryParentID>
+      <CategoryIDPath>/00000150/00000011/00001102</CategoryIDPath>
+      <CategoryLevel>2</CategoryLevel>
+      <CategoryChildCount>0</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>true</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>325</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>241</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cms.url.url$}</CategoryDisplayName>
+      <CategoryOrder>1</CategoryOrder>
+      <CategoryName>CMS.URL.URL</CategoryName>
+      <CategoryParentID>11</CategoryParentID>
+      <CategoryIDPath>/00000150/00000011/00000241</CategoryIDPath>
+      <CategoryLevel>2</CategoryLevel>
+      <CategoryChildCount>0</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>true</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>325</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>704</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsecommerceproductsui$}</CategoryDisplayName>
+      <CategoryOrder>1</CategoryOrder>
+      <CategoryName>CMS.Ecommerce.ProductsUI</CategoryName>
+      <CategoryParentID>18</CategoryParentID>
+      <CategoryIDPath>/00000150/00000018/00000704</CategoryIDPath>
+      <CategoryLevel>2</CategoryLevel>
+      <CategoryChildCount>0</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>true</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>111</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>611</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsonlinemarketingonlinemarketing$}</CategoryDisplayName>
+      <CategoryOrder>1</CategoryOrder>
+      <CategoryName>CMS.OnlineMarketing.OnlineMarketing</CategoryName>
+      <CategoryParentID>555</CategoryParentID>
+      <CategoryIDPath>/00000150/00000555/00000611</CategoryIDPath>
+      <CategoryLevel>2</CategoryLevel>
+      <CategoryChildCount>0</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>true</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>196</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>10</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsemail$}</CategoryDisplayName>
+      <CategoryOrder>2</CategoryOrder>
+      <CategoryName>CMS.System.Email</CategoryName>
+      <CategoryParentID>9</CategoryParentID>
+      <CategoryIDPath>/00000150/00000009/00000010</CategoryIDPath>
+      <CategoryLevel>2</CategoryLevel>
+      <CategoryChildCount>3</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>false</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>338</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>563</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsecommerceglobalobjects$}</CategoryDisplayName>
+      <CategoryOrder>1</CategoryOrder>
+      <CategoryName>CMS.Ecommerce.GlobalObjects</CategoryName>
+      <CategoryParentID>18</CategoryParentID>
+      <CategoryIDPath>/00000150/00000018/00000563</CategoryIDPath>
+      <CategoryLevel>2</CategoryLevel>
+      <CategoryChildCount>2</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>false</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>111</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>56</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsnewsletters$}</CategoryDisplayName>
+      <CategoryOrder>3</CategoryOrder>
+      <CategoryName>CMS.OnlineMarketing.Newsletters</CategoryName>
+      <CategoryParentID>555</CategoryParentID>
+      <CategoryIDPath>/00000150/00000555/00000056</CategoryIDPath>
+      <CategoryLevel>2</CategoryLevel>
+      <CategoryChildCount>3</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>false</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>108</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>19</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmswebanalytics$}</CategoryDisplayName>
+      <CategoryOrder>4</CategoryOrder>
+      <CategoryName>CMS.OnlineMarketing.WebAnalytics</CategoryName>
+      <CategoryParentID>555</CategoryParentID>
+      <CategoryIDPath>/00000150/00000555/00000019</CategoryIDPath>
+      <CategoryLevel>2</CategoryLevel>
+      <CategoryChildCount>5</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>false</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>115</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>580</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsnewsletterspop3settings$}</CategoryDisplayName>
+      <CategoryOrder>3</CategoryOrder>
+      <CategoryName>CMS.Newsletters.POP3Settings</CategoryName>
+      <CategoryParentID>56</CategoryParentID>
+      <CategoryIDPath>/00000150/00000555/00000056/00000580</CategoryIDPath>
+      <CategoryLevel>3</CategoryLevel>
+      <CategoryChildCount>0</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>true</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>108</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>257</CategoryID>
+      <CategoryDisplayName>{$general.general$}</CategoryDisplayName>
+      <CategoryOrder>1</CategoryOrder>
+      <CategoryName>CMS.WebAnalytics.General</CategoryName>
+      <CategoryParentID>19</CategoryParentID>
+      <CategoryIDPath>/00000150/00000555/00000019/00000257</CategoryIDPath>
+      <CategoryLevel>3</CategoryLevel>
+      <CategoryChildCount>0</CategoryChildCount>
+      <CategoryIsGroup>true</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>115</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>564</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsecommerceallowglobalobjectsfor$}</CategoryDisplayName>
+      <CategoryOrder>1</CategoryOrder>
+      <CategoryName>CMS.Ecommerce.AllowGlobalObjectsFor</CategoryName>
+      <CategoryParentID>563</CategoryParentID>
+      <CategoryIDPath>/00000150/00000018/00000563/00000564</CategoryIDPath>
+      <CategoryLevel>3</CategoryLevel>
+      <CategoryChildCount>0</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>true</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>111</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>523</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsemailprocessing$}</CategoryDisplayName>
+      <CategoryOrder>2</CategoryOrder>
+      <CategoryName>CMS.Email.Processing</CategoryName>
+      <CategoryParentID>10</CategoryParentID>
+      <CategoryIDPath>/00000150/00000009/00000010/00000523</CategoryIDPath>
+      <CategoryLevel>3</CategoryLevel>
+      <CategoryChildCount>0</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>true</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>338</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>565</CategoryID>
+      <CategoryDisplayName>{$settingscategory.cmsecommerceuseglobalsettingsfor$}</CategoryDisplayName>
+      <CategoryOrder>2</CategoryOrder>
+      <CategoryName>CMS.Ecommerce.UseGlobalSettingsFor</CategoryName>
+      <CategoryParentID>563</CategoryParentID>
+      <CategoryIDPath>/00000150/00000018/00000563/00000565</CategoryIDPath>
+      <CategoryLevel>3</CategoryLevel>
+      <CategoryChildCount>0</CategoryChildCount>
+      <CategoryIconPath></CategoryIconPath>
+      <CategoryIsGroup>true</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>111</CategoryResourceID>
+    </cms_settingscategory>
+    <cms_settingscategory>
+      <CategoryID>256</CategoryID>
+      <CategoryDisplayName>{$general.general$}</CategoryDisplayName>
+      <CategoryOrder>1</CategoryOrder>
+      <CategoryName>CMS.Newsletters.General</CategoryName>
+      <CategoryParentID>56</CategoryParentID>
+      <CategoryIDPath>/00000150/00000555/00000056/00000256</CategoryIDPath>
+      <CategoryLevel>3</CategoryLevel>
+      <CategoryChildCount>0</CategoryChildCount>
+      <CategoryIsGroup>true</CategoryIsGroup>
+      <CategoryIsCustom>false</CategoryIsCustom>
+      <CategoryResourceID>108</CategoryResourceID>
+    </cms_settingscategory>
+  </NewDataSet>
+</cms_settingskey>

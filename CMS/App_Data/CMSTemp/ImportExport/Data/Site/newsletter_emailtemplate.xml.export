@@ -1,0 +1,636 @@
+﻿<newsletter_emailtemplate version="12.0">
+  <NewDataSet>
+    <newsletter_emailtemplate>
+      <TemplateID>1</TemplateID>
+      <TemplateDisplayName>Unsubscription confirmation</TemplateDisplayName>
+      <TemplateName>DancingGoatMvcUnsubscriptionConfirmation</TemplateName>
+      <TemplateSiteID>1</TemplateSiteID>
+      <TemplateType>U</TemplateType>
+      <TemplateGUID>9a8a009d-8cbc-4052-b3c3-1275361b371b</TemplateGUID>
+      <TemplateLastModified>2017-12-12T09:21:22.3974174-06:00</TemplateLastModified>
+      <TemplateSubject>Unsubscription confirmation</TemplateSubject>
+      <TemplateCode>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+	&lt;head&gt;
+	  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+	  &lt;title&gt;Unsubscription confirmation email&lt;/title&gt;
+	&lt;/head&gt;
+&lt;body&gt;
+&lt;table border="0" cellpadding="0" cellspacing="0" style="width: 600px;" width="600"&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td style="font-family: Verdana, sans-serif; font-size: 30px; font-weight: bold;"&gt;We removed your email from our list&lt;br /&gt;
+			&amp;nbsp;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style="font-family: Verdana, sans-serif; font-size: 16px; "&gt;Was this by mistake?&lt;br /&gt;
+			If you forwarded one of our emails to a friend, they could have clicked the unsubscribe link on your behalf. If you didn&amp;rsquo;t intend to unsubscribe, subscribe again on our&amp;nbsp;&lt;a href="~/"&gt;home page&lt;/a&gt;.&lt;br /&gt;
+			&amp;nbsp;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style="font-family: Verdana, sans-serif; font-size: 16px;"&gt;&lt;br /&gt;
+			If you have any questions, contact us at&amp;nbsp;&lt;a href="mailto:dancinggoat@localhost.local"&gt;dancinggoat@localhost.local&lt;/a&gt;.&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&amp;nbsp;
+			&lt;hr /&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td align="center" style="font-family: Verdana, sans-serif; font-size: 14px;"&gt;Copyright &amp;copy; 2014 Dancing Goat. All rights reserved.&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</TemplateCode>
+      <TemplateInlineCSS>false</TemplateInlineCSS>
+    </newsletter_emailtemplate>
+    <newsletter_emailtemplate>
+      <TemplateID>2</TemplateID>
+      <TemplateDisplayName>Double opt-in activation template</TemplateDisplayName>
+      <TemplateName>MvcDemoDoubleOpt-inActivationTemplate</TemplateName>
+      <TemplateSiteID>1</TemplateSiteID>
+      <TemplateType>D</TemplateType>
+      <TemplateGUID>83e8920d-538e-4d63-8796-1c44672cfc5a</TemplateGUID>
+      <TemplateLastModified>2017-12-12T09:21:22.4088535-06:00</TemplateLastModified>
+      <TemplateSubject>Confirm your subscription</TemplateSubject>
+      <TemplateCode>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+	&lt;head&gt;
+	  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+	  &lt;title&gt;Subscription confirmation email&lt;/title&gt;
+	&lt;/head&gt;
+&lt;body&gt;
+&lt;table border="0" cellpadding="0" cellspacing="0" style="width: 600px;" width="600"&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td style="font-family: Verdana, sans-serif; font-size: 30px; font-weight: bold;"&gt;Please confirm your subscription!&lt;br /&gt;
+			&amp;nbsp;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+			&lt;table cellpadding="0" cellspacing="0"&gt;
+				&lt;tbody&gt;
+					&lt;tr&gt;
+						&lt;td align="center" bgcolor="#08768c" height="45" style="padding: 5px 10px; border: 2px solid rgb(8, 118, 140); border-image: none; color: rgb(255, 255, 255); display: block;" width="180"&gt;&lt;a href="{% EmailFeed.SubscriptionConfirmationUrl |(identity)GlobalAdministrator|(hash)4fbdcb892cdea5c021eb173ab770153487fa8520b613e3bf97a5f234b0a8fcbb%}" style="width: 180px; line-height: 45px; font-family: Verdana, sans-serif; font-size: 16px; font-weight: normal; text-decoration: none; display: inline-block;"&gt;&lt;span style="color: rgb(255, 255, 255);"&gt;SUBSCRIBE&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/tbody&gt;
+			&lt;/table&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style="font-family: Verdana, sans-serif; font-size: 16px;"&gt;&lt;br /&gt;
+			If you received this email by mistake, delete it.&lt;br /&gt;
+			We won&amp;rsquo;t subscribe you to any newsletter until you click the confirmation link above.&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style="font-family: Verdana, sans-serif; font-size: 16px;"&gt;&lt;br /&gt;
+			If you have any questions, contact us at&amp;nbsp;&lt;a href="mailto:dancinggoat@localhost.local"&gt;dancinggoat@localhost.local&lt;/a&gt;.&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&amp;nbsp;
+			&lt;hr /&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td align="center" style="font-family: Verdana, sans-serif; font-size: 14px;"&gt;Copyright &amp;copy; 2014 Dancing Goat. All rights reserved.&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</TemplateCode>
+      <TemplateInlineCSS>false</TemplateInlineCSS>
+    </newsletter_emailtemplate>
+    <newsletter_emailtemplate>
+      <TemplateID>3</TemplateID>
+      <TemplateDisplayName>Email template (3 zones)</TemplateDisplayName>
+      <TemplateName>MvcDemoEmailTemplate3zones</TemplateName>
+      <TemplateSiteID>1</TemplateSiteID>
+      <TemplateType>I</TemplateType>
+      <TemplateGUID>8e0d3101-44fa-4f1f-88c8-2a72bfc8c0e2</TemplateGUID>
+      <TemplateLastModified>2019-06-25T03:08:35.6371484-05:00</TemplateLastModified>
+      <TemplateDescription>Sample email template demonstrating the key concepts of the Email builder.</TemplateDescription>
+      <TemplateIconClass></TemplateIconClass>
+      <TemplateCode>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Dancing Goat email&lt;/title&gt;
+&lt;!-- 
+
+    Hello!
+    
+    We are including this template as part of the Dancing Goat demo site to help you start with email marketing in Kentico.
+    Together with included sample widgets, this template demonstrates key concepts of our Email builder. 
+    
+    Please note that this template is meant to be used for demo purposes only.
+
+    Your Kentico Dev Team
+
+ --&gt;
+
+&lt;!--
+
+    An email present from your friends at Litmus (@litmusapp)
+
+    Email is surprisingly hard. While this has been thoroughly tested, your mileage may vary.
+    It's highly recommended that you test using a service like Litmus (http://litmus.com) and your own devices.
+
+    Enjoy!
+
+--&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;
+&lt;style type="text/css"&gt;
+    /* CLIENT-SPECIFIC STYLES */
+    body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+    table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+    img{-ms-interpolation-mode: bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+    /* RESET STYLES */
+    img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;}
+    table{border-collapse: collapse !important;}
+    body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}
+
+    /* iOS BLUE LINKS */
+    a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+    }
+
+    /* MOBILE STYLES */
+    @media screen and (max-width: 525px) {
+
+        /* ALLOWS FOR FLUID TABLES */
+        .wrapper {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        /* ADJUSTS LAYOUT OF LOGO IMAGE */
+        .logo img {
+          margin: 0 auto !important;
+        }
+
+        .img-max {
+          max-width: 100% !important;
+          width: 100% !important;
+          height: auto !important;
+        }
+
+        /* FULL-WIDTH TABLES */
+        .responsive-table {
+          width: 100% !important;
+        }
+
+        /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+        .padding {
+          padding: 10px 5% 15px 5% !important;
+        }
+
+        .padding-meta {
+          padding: 30px 5% 0px 5% !important;
+          text-align: center;
+        }
+
+        .no-padding {
+          padding: 0 !important;
+        }
+
+        /* ADJUST BUTTONS ON MOBILE */
+        .mobile-button-container {
+            margin: 0 auto;
+            width: 100% !important;
+        }
+
+        .mobile-button {
+            padding: 15px !important;
+            border: 0 !important;
+            font-size: 16px !important;
+            display: block !important;
+        }
+
+    }
+
+    /* ANDROID CENTER FIX */
+    div[style*="margin: 16px 0;"] { margin: 0 !important; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body style="margin: 0 !important; padding: 0 !important;"&gt;
+
+&lt;!-- HIDDEN PREHEADER TEXT --&gt;
+&lt;div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"&gt;
+  {% Email.Preheader |(identity)GlobalAdministrator|(hash)45068c808a6cc6049843521febf659e82265cd6c01390bcdf66a2d9b23372a79%}
+&lt;/div&gt;
+
+&lt;!-- HEADER --&gt;
+&lt;table border="0" cellpadding="0" cellspacing="0" width="100%"&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#b24143" align="center"&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;table align="center" border="0" cellspacing="0" cellpadding="0" width="500"&gt;
+            &lt;tr&gt;
+            &lt;td align="center" valign="top" width="500"&gt;
+            &lt;![endif]--&gt;
+            &lt;table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;" class="wrapper"&gt;
+                &lt;tr&gt;
+                    &lt;td align="center" valign="top" style="padding: 15px 0;" class="logo"&gt;
+                        &lt;a href="~/?utm_content=dglogolink" target="_blank"&gt;
+                            &lt;img alt="Logo" src="~/getmedia/92c7a666-54f4-48f9-b891-1105715c88ea/logo-dancing-goat-inverted" width="240" height="60" style="display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;" border="0"&gt;
+                        &lt;/a&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;![endif]--&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#ffffff" align="center" style="padding: 35px 15px 35px 15px;"&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;table align="center" border="0" cellspacing="0" cellpadding="0" width="500"&gt;
+            &lt;tr&gt;
+            &lt;td align="center" valign="top" width="500"&gt;
+            &lt;![endif]--&gt;
+            &lt;table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;" class="responsive-table"&gt;
+                &lt;tr&gt;
+                    &lt;td align="center" height="100%" valign="top" width="100%" style="max-width:500px;"&gt;
+                        $$zone1$$
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;![endif]--&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#F5F7FA" align="center" style="padding: 35px 15px 35px 15px;"&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;table align="center" border="0" cellspacing="0" cellpadding="0" width="500"&gt;
+            &lt;tr&gt;
+            &lt;td align="center" valign="top" width="500"&gt;
+            &lt;![endif]--&gt;
+            &lt;table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;" class="responsive-table"&gt;
+                &lt;tr&gt;
+                    &lt;td align="center" height="100%" valign="top" width="100%" style="max-width:500px;"&gt;
+                        $$zone2$$
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;![endif]--&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#E6E9ED" align="center" style="padding: 35px 15px 35px 15px;"&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;table align="center" border="0" cellspacing="0" cellpadding="0" width="500"&gt;
+            &lt;tr&gt;
+            &lt;td align="center" valign="top" width="500"&gt;
+            &lt;![endif]--&gt;
+            &lt;table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-bottom: 20px; max-width: 500px;" class="responsive-table"&gt;
+                &lt;tr&gt;
+                    &lt;td align="center" height="100%" valign="top" width="100%" style="max-width:500px;"&gt;
+                        $$zone3$$
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;![endif]--&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#ffffff" align="center" style="padding: 20px 0px;"&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;table align="center" border="0" cellspacing="0" cellpadding="0" width="500"&gt;
+            &lt;tr&gt;
+            &lt;td align="center" valign="top" width="500"&gt;
+            &lt;![endif]--&gt;
+            &lt;!-- UNSUBSCRIBE COPY --&gt;
+            &lt;table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="max-width: 500px;" class="responsive-table"&gt;
+                &lt;tr&gt;
+                    &lt;td align="center" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;"&gt;
+                        We hope you found this message to be useful.
+                        However, if you&amp;#39;d rather not receive these emails in the future,
+                        please &lt;a href="{% EmailFeed.UnsubscribeFromEmailFeedUrl |(identity)GlobalAdministrator|(hash)e6d35e9f1d9d16d8c94bfb53cc0849c788c75a8a4022d326ce9a4611ce02d1f3%}" target="_blank" style="color: #000000;"&gt;unsubscribe&lt;/a&gt; from this newsletter.
+                        You can also unsubscribe from &lt;a href="{% EmailFeed.UnsubscribeFromAllEmailFeedsUrl |(identity)GlobalAdministrator|(hash)4a5c3c542874c04b66c8d1fbde68d4ca0f471986d48f80161bc1c8bead270e56%}" target="_blank" style="color: #000000;"&gt;all marketing emails&lt;/a&gt;.
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td align="center" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;"&gt;
+                        &lt;a href="{% Email.ViewInBrowserUrl |(identity)GlobalAdministrator|(hash)94583776ea948d41e7243de6a26813b30749a850d844361e7e2108e9632661e5%}" target="_blank" style="color: #000000;"&gt;View this email in your browser.&lt;/a&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;![endif]--&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</TemplateCode>
+      <TemplateInlineCSS>false</TemplateInlineCSS>
+    </newsletter_emailtemplate>
+    <newsletter_emailtemplate>
+      <TemplateID>4</TemplateID>
+      <TemplateDisplayName>Email template (2 zones)</TemplateDisplayName>
+      <TemplateName>MvcDemoGeneralEmail</TemplateName>
+      <TemplateSiteID>1</TemplateSiteID>
+      <TemplateType>I</TemplateType>
+      <TemplateGUID>18df7f69-0209-456e-ae8d-5aa75c7c71ca</TemplateGUID>
+      <TemplateLastModified>2019-06-25T03:08:35.652798-05:00</TemplateLastModified>
+      <TemplateIconClass></TemplateIconClass>
+      <TemplateCode>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Dancing Goat email&lt;/title&gt;
+&lt;!-- 
+
+    Hello!
+    
+    We are including this template as part of the Dancing Goat demo site to help you start with email marketing in Kentico.
+    Together with included sample widgets, this template demonstrates key concepts of our Email builder. 
+    
+    Please note that this template is meant to be used for demo purposes only.
+
+    Your Kentico Dev Team
+
+ --&gt;
+
+&lt;!--
+
+    An email present from your friends at Litmus (@litmusapp)
+
+    Email is surprisingly hard. While this has been thoroughly tested, your mileage may vary.
+    It's highly recommended that you test using a service like Litmus (http://litmus.com) and your own devices.
+
+    Enjoy!
+
+--&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;
+&lt;style type="text/css"&gt;
+    /* CLIENT-SPECIFIC STYLES */
+    body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+    table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+    img{-ms-interpolation-mode: bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+    /* RESET STYLES */
+    img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;}
+    table{border-collapse: collapse !important;}
+    body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}
+
+    /* iOS BLUE LINKS */
+    a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+    }
+
+    /* MOBILE STYLES */
+    @media screen and (max-width: 525px) {
+
+        /* ALLOWS FOR FLUID TABLES */
+        .wrapper {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        /* ADJUSTS LAYOUT OF LOGO IMAGE */
+        .logo img {
+          margin: 0 auto !important;
+        }
+
+        .img-max {
+          max-width: 100% !important;
+          width: 100% !important;
+          height: auto !important;
+        }
+
+        /* FULL-WIDTH TABLES */
+        .responsive-table {
+          width: 100% !important;
+        }
+
+        /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+        .padding {
+          padding: 10px 5% 15px 5% !important;
+        }
+
+        .padding-meta {
+          padding: 30px 5% 0px 5% !important;
+          text-align: center;
+        }
+
+        .no-padding {
+          padding: 0 !important;
+        }
+
+        /* ADJUST BUTTONS ON MOBILE */
+        .mobile-button-container {
+            margin: 0 auto;
+            width: 100% !important;
+        }
+
+        .mobile-button {
+            padding: 15px !important;
+            border: 0 !important;
+            font-size: 16px !important;
+            display: block !important;
+        }
+
+    }
+
+    /* ANDROID CENTER FIX */
+    div[style*="margin: 16px 0;"] { margin: 0 !important; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body style="margin: 0 !important; padding: 0 !important;"&gt;
+
+&lt;!-- HIDDEN PREHEADER TEXT --&gt;
+&lt;div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"&gt;
+  {% Email.Preheader |(identity)GlobalAdministrator|(hash)45068c808a6cc6049843521febf659e82265cd6c01390bcdf66a2d9b23372a79%}
+&lt;/div&gt;
+
+&lt;!-- HEADER --&gt;
+&lt;table border="0" cellpadding="0" cellspacing="0" width="100%"&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#b24143" align="center"&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;table align="center" border="0" cellspacing="0" cellpadding="0" width="500"&gt;
+            &lt;tr&gt;
+            &lt;td align="center" valign="top" width="500"&gt;
+            &lt;![endif]--&gt;
+            &lt;table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;" class="wrapper"&gt;
+                &lt;tr&gt;
+                    &lt;td align="center" valign="top" style="padding: 15px 0;" class="logo"&gt;
+                        &lt;a href="~/?utm_content=dglogolink" target="_blank"&gt;
+                            &lt;img alt="Logo" src="~/getmedia/92c7a666-54f4-48f9-b891-1105715c88ea/logo-dancing-goat-inverted" width="240" height="60" style="display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;" border="0"&gt;
+                        &lt;/a&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;![endif]--&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#ffffff" align="center" style="padding: 35px 15px 35px 15px;"&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;table align="center" border="0" cellspacing="0" cellpadding="0" width="500"&gt;
+            &lt;tr&gt;
+            &lt;td align="center" valign="top" width="500"&gt;
+            &lt;![endif]--&gt;
+            &lt;table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;" class="responsive-table"&gt;
+                &lt;tr&gt;
+                    &lt;td align="center" height="100%" valign="top" width="100%" style="max-width:500px;"&gt;
+                        $$zone1$$
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;![endif]--&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#F5F7FA" align="center" style="padding: 35px 15px 35px 15px;"&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;table align="center" border="0" cellspacing="0" cellpadding="0" width="500"&gt;
+            &lt;tr&gt;
+            &lt;td align="center" valign="top" width="500"&gt;
+            &lt;![endif]--&gt;
+            &lt;table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 500px;" class="responsive-table"&gt;
+                &lt;tr&gt;
+                    &lt;td align="center" height="100%" valign="top" width="100%" style="max-width:500px;"&gt;
+                        $$zone2$$
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;![endif]--&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor="#ffffff" align="center" style="padding: 20px 0px;"&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;table align="center" border="0" cellspacing="0" cellpadding="0" width="500"&gt;
+            &lt;tr&gt;
+            &lt;td align="center" valign="top" width="500"&gt;
+            &lt;![endif]--&gt;
+            &lt;!-- UNSUBSCRIBE COPY --&gt;
+            &lt;table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="max-width: 500px;" class="responsive-table"&gt;
+                &lt;tr&gt;
+                    &lt;td align="center" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;"&gt;
+                        We hope you found this message to be useful.
+                        However, if you&amp;#39;d rather not receive these emails in the future,
+                        please &lt;a href="{% EmailFeed.UnsubscribeFromEmailFeedUrl |(identity)GlobalAdministrator|(hash)e6d35e9f1d9d16d8c94bfb53cc0849c788c75a8a4022d326ce9a4611ce02d1f3%}" target="_blank" style="color: #000000;"&gt;unsubscribe&lt;/a&gt; from this newsletter.
+                        You can also unsubscribe from &lt;a href="{% EmailFeed.UnsubscribeFromAllEmailFeedsUrl |(identity)GlobalAdministrator|(hash)4a5c3c542874c04b66c8d1fbde68d4ca0f471986d48f80161bc1c8bead270e56%}" target="_blank" style="color: #000000;"&gt;all marketing emails&lt;/a&gt;.
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td align="center" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;"&gt;
+                        &lt;a href="{% Email.ViewInBrowserUrl |(identity)GlobalAdministrator|(hash)94583776ea948d41e7243de6a26813b30749a850d844361e7e2108e9632661e5%}" target="_blank" style="color: #000000;"&gt;View this email in your browser.&lt;/a&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;!--[if (gte mso 9)|(IE)]&gt;
+            &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;![endif]--&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</TemplateCode>
+      <TemplateInlineCSS>false</TemplateInlineCSS>
+    </newsletter_emailtemplate>
+    <newsletter_emailtemplate>
+      <TemplateID>5</TemplateID>
+      <TemplateDisplayName>Subscription confirmation</TemplateDisplayName>
+      <TemplateName>DancingGoatMvcSubscriptionConfirmation</TemplateName>
+      <TemplateSiteID>1</TemplateSiteID>
+      <TemplateType>S</TemplateType>
+      <TemplateGUID>34d280d9-4712-4932-863f-6b5a9e9ca1ab</TemplateGUID>
+      <TemplateLastModified>2017-12-12T09:21:22.3784995-06:00</TemplateLastModified>
+      <TemplateSubject>Subscription confirmation</TemplateSubject>
+      <TemplateCode>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+	&lt;head&gt;
+	  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+	  &lt;title&gt;Subscription confirmation email&lt;/title&gt;
+	&lt;/head&gt;
+&lt;body&gt;
+&lt;table border="0" cellpadding="0" cellspacing="0" style="width: 600px;" width="600"&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td style="font-family: Verdana, sans-serif; font-size: 30px; font-weight: bold;"&gt;Thank you for subscribing!&lt;br /&gt;
+			&amp;nbsp;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style="font-family: Verdana, sans-serif; font-size: 16px;"&gt;Every now and then, you&amp;rsquo;ll receive an offer on our great coffees.&lt;br /&gt;
+			Don&amp;rsquo;t feel like waiting?&lt;br /&gt;
+			&amp;nbsp;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+			&lt;table cellpadding="0" cellspacing="0"&gt;
+				&lt;tbody&gt;
+					&lt;tr&gt;
+						&lt;td align="center" bgcolor="#08768c" height="45" style="padding: 5px 10px; border: 2px solid rgb(8, 118, 140); border-image: none; color: rgb(255, 255, 255); display: block;" width="180"&gt;&lt;a href="~/" style="width: 180px; line-height: 45px; font-family: verdana,sans-serif; font-size: 16px; font-weight: normal; text-decoration: none; display: inline-block;"&gt;&lt;span style="color: rgb(255, 255, 255);"&gt;VISIT OUR STORE&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/tbody&gt;
+			&lt;/table&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td style="font-family: Verdana, sans-serif; font-size: 16px;"&gt;&lt;br /&gt;
+			If you have any questions, contact us at&amp;nbsp;&lt;a href="mailto:dancinggoat@localhost.local"&gt;dancinggoat@localhost.local&lt;/a&gt;.&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&amp;nbsp;
+			&lt;hr /&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td align="center" style="font-family: Verdana, sans-serif; font-size: 14px;"&gt;Copyright &amp;copy; 2014 Dancing Goat. All rights reserved.&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</TemplateCode>
+      <TemplateInlineCSS>false</TemplateInlineCSS>
+    </newsletter_emailtemplate>
+  </NewDataSet>
+</newsletter_emailtemplate>

@@ -1,0 +1,28 @@
+﻿<ecommerce_paymentoption version="12.0">
+  <NewDataSet>
+    <com_paymentoption>
+      <PaymentOptionID>1</PaymentOptionID>
+      <PaymentOptionName>DancingGoatMVC.MoneyTransfer</PaymentOptionName>
+      <PaymentOptionDisplayName>Money transfer</PaymentOptionDisplayName>
+      <PaymentOptionEnabled>true</PaymentOptionEnabled>
+      <PaymentOptionSiteID>1</PaymentOptionSiteID>
+      <PaymentOptionClassName></PaymentOptionClassName>
+      <PaymentOptionSucceededOrderStatusID>5</PaymentOptionSucceededOrderStatusID>
+      <PaymentOptionFailedOrderStatusID>6</PaymentOptionFailedOrderStatusID>
+      <PaymentOptionGUID>f8b913d6-c75b-4e61-ade9-492723b1d6b9</PaymentOptionGUID>
+      <PaymentOptionLastModified>2017-03-03T06:33:50.8696369-06:00</PaymentOptionLastModified>
+      <PaymentOptionAllowIfNoShipping>true</PaymentOptionAllowIfNoShipping>
+    </com_paymentoption>
+    <com_paymentoption>
+      <PaymentOptionID>2</PaymentOptionID>
+      <PaymentOptionName>DancingGoatMVC.CashOnDelivery</PaymentOptionName>
+      <PaymentOptionDisplayName>Cash on delivery</PaymentOptionDisplayName>
+      <PaymentOptionEnabled>true</PaymentOptionEnabled>
+      <PaymentOptionSiteID>1</PaymentOptionSiteID>
+      <PaymentOptionClassName></PaymentOptionClassName>
+      <PaymentOptionGUID>e890c107-27b1-4d71-a848-d8d836b0698f</PaymentOptionGUID>
+      <PaymentOptionLastModified>2017-03-03T06:33:50.8406381-06:00</PaymentOptionLastModified>
+      <PaymentOptionAllowIfNoShipping>false</PaymentOptionAllowIfNoShipping>
+    </com_paymentoption>
+  </NewDataSet>
+</ecommerce_paymentoption>

@@ -1,0 +1,298 @@
+﻿<cms_emailtemplate version="12.0">
+  <NewDataSet>
+    <cms_emailtemplate>
+      <EmailTemplateID>1168</EmailTemplateID>
+      <EmailTemplateName>Ecommerce.OrderPaymentNotificationToCustomer</EmailTemplateName>
+      <EmailTemplateDisplayName>E-commerce - Order payment notification to customer</EmailTemplateDisplayName>
+      <EmailTemplateText>&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Payment received&lt;/h1&gt;
+    &lt;p&gt;We have received your payment for your order.&lt;/p&gt;
+    &lt;p&gt;
+      Check the &lt;i&gt;E-commerce - Order notification to customer&lt;/i&gt; email template to 
+      see a more complex template example.
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</EmailTemplateText>
+      <EmailTemplateSiteID>1</EmailTemplateSiteID>
+      <EmailTemplateGUID>6b54c725-42e1-4cbb-8882-09ab67627d72</EmailTemplateGUID>
+      <EmailTemplateLastModified>2017-03-03T06:21:59.9398695-06:00</EmailTemplateLastModified>
+      <EmailTemplateType>ecommerce</EmailTemplateType>
+    </cms_emailtemplate>
+    <cms_emailtemplate>
+      <EmailTemplateID>1169</EmailTemplateID>
+      <EmailTemplateName>Ecommerce.OrderNotificationToCustomer</EmailTemplateName>
+      <EmailTemplateDisplayName>E-commerce - Order notification to customer</EmailTemplateDisplayName>
+      <EmailTemplateText>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;
+  &lt;p&gt;Thank you for your order. Below you can find the order details.&lt;/p&gt;
+  &lt;table width="600" cellspacing="0" cellpadding="5" border="1" style="border-color:black;"&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td height="50" valign="bottom" colspan="2"&gt;
+          &lt;table width="100%"&gt;
+            &lt;tbody&gt;
+              &lt;tr&gt;
+                &lt;td style="text-align: left; vertical-align: bottom;"&gt;&lt;span style="font-size: 18pt;"&gt;Your order&lt;/span&gt;&lt;/td&gt;
+                &lt;td style="text-align: center; vertical-align: middle;"&gt;&lt;span style="font-family: Garamond,Times,serif; font-size: 24pt; font-style: italic;"&gt;Company logo&lt;/span&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style="text-align: left; padding: 8px"&gt;
+          &lt;table style="width: 287px; height: 23px"&gt;
+            &lt;tbody&gt;
+              &lt;tr&gt;
+                &lt;td style="text-align: left; color:black; font-weight:bold;"&gt;Invoice number&lt;/td&gt;
+                &lt;td style="text-align: right; padding-right: 10px; padding: 8px"&gt;{%Order.OrderInvoiceNumber|(encode)true|(identity)GlobalAdministrator|(hash)06cd4256ee01b132a87fbf0a40f5ee9d659874fef2c76e8ba6cbca100131dcac%}&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/td&gt;
+        &lt;td style="text-align: left; padding: 8px"&gt;
+          &lt;table width="100%"&gt;
+            &lt;tbody&gt;
+              &lt;tr&gt;
+                &lt;td style="text-align: left; color:black; font-weight:bold;"&gt;Order date:&lt;/td&gt;
+                &lt;td style="text-align: right; padding: 8px"&gt;{% Order.OrderDate |(identity)GlobalAdministrator|(hash)9d1f938f0736398dca13d82f1756836e70c9cffe70dec578a95097739825e736%}&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style="text-align: left; vertical-align: top; padding: 8px" width="50%"&gt;&lt;span style="color:black; font-weight:bold"&gt;Supplier&lt;/span&gt;&lt;br /&gt;
+          &amp;nbsp;
+          &lt;table&gt;
+            &lt;tbody&gt;
+              &lt;tr&gt;
+                &lt;td&gt;Company address&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/td&gt;
+        &lt;td style="text-align: left; vertical-align: top; padding: 8px" width="50%"&gt;&lt;span style="color:black; font-weight:bold"&gt;Customer &lt;/span&gt;&lt;br /&gt;
+          &lt;p&gt;
+            {% if(!IsNullOrEmpty(Customer.CustomerCompany)) { %} {% Localize(Customer.CustomerCompany)|(encode)true %} &lt;br/&gt; {% } |(identity)GlobalAdministrator|(hash)a5a41ab9b5fd8d8bc43fc6071e52ac747921d3b1932d8b13b0074af565afe143%}
+            {% if(!IsNullOrEmpty(Customer.CustomerTaxRegistrationID)) { %} {%  "Tax registration ID: " + Localize(Customer.CustomerTaxRegistrationID)|(encode)true %} &lt;br/&gt;{% }|(identity)GlobalAdministrator|(hash)76bc143b98845d2d34bac6e26c22e67e4c3448e92d7619115dfd47d51096dc1c%}
+            {% if(!IsNullOrEmpty(Customer.CustomerOrganizationID)) { %} {% "Organization ID: " + Localize(Customer.CustomerOrganizationID)|(encode)true %} &lt;br/&gt;{% } |(identity)GlobalAdministrator|(hash)8a7ef104f9aa12cfdf69ae654c596f2776d7e77977a0675dfd4afc8c040ae53d%}
+            {% Localize(BillingAddress.AddressPersonalName)|(encode)true |(identity)GlobalAdministrator|(hash)4ebcd9411da8573de0f36c951b257299668685d282525c02413a0c36466a3b3c%}&lt;br /&gt;
+            {% Localize(BillingAddress.AddressLine1)|(encode)true |(identity)GlobalAdministrator|(hash)a8a25ce88b118d1aee31838b26779dbd7b5fc883d53280a87551c20f0496c356%}&lt;br /&gt;
+            {% if(!IsNullOrEmpty(BillingAddress.AddressLine2)) { %} {%  Localize(BillingAddress.AddressLine2)|(encode)true %} &lt;br/&gt;{% } |(identity)GlobalAdministrator|(hash)dba6854ef29f7084971d7545505dcf1be4ee6175d9a3673a05ada33b7de2a77b%}
+            {% Localize(BillingAddress.AddressCity)|(encode)true |(identity)GlobalAdministrator|(hash)e41010e9d39487811683cc7de7de1c5b385d9c665bbfb1e1975ee8ef377d0f56%}&lt;br /&gt;
+            {% Localize(BillingAddress.AddressZip)|(encode)true |(identity)GlobalAdministrator|(hash)03078495685da912ab60eb56904fb023b48a28f90f3074709932c4cf835a5c95%}&lt;br /&gt;
+            {% Localize(BillingAddress.Country.CountryDisplayName)|(encode)true |(identity)GlobalAdministrator|(hash)cb553840deae8bc504fb193956622b3e3189ada34ddfe26548dc1dabc8a59732%}{% if(BillingAddress.State != null) { ", " + Localize(BillingAddress.State.StateDisplayName) }|(encode)true |(identity)GlobalAdministrator|(hash)4b6f853957a29c9580125ed1fb0c49f3294e7106b02385b66679306be7a4c970%}
+          &lt;/p&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td colspan="2"&gt;
+          &lt;table width="100%"&gt;
+            &lt;tbody&gt;
+              &lt;tr&gt;
+                &lt;td style="text-align: left; padding: 8px"&gt;&lt;span style="color:black; font-weight:bold"&gt;Payment option&lt;/span&gt;&lt;/td&gt;
+                &lt;td style="text-align: left; padding: 8px"&gt;{%PaymentOption.PaymentOptionDisplayName |(identity)GlobalAdministrator|(hash)672beb7e5a2e6a1e46890f21c212c6c99dad045c390d0867358c2a9bbb3ecc34%}&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td colspan="2" style="text-align: left; padding: 8px"&gt;
+          &lt;table class="productsList" width="100%" cellspacing="0" cellpadding="2" style="text-align: right"&gt;
+            &lt;thead&gt;
+              &lt;tr&gt;
+                &lt;th style="text-align: left; padding-top: 21px;"&gt;{$InvoiceTemplate.SKUName$}&lt;/th&gt;
+                &lt;th style="text-align: right; padding-top: 21px;"&gt;{$InvoiceTemplate.SKUUnits$}&lt;/th&gt;
+                &lt;th style="text-align: right; padding-top: 21px;"&gt;{$InvoiceTemplate.SKUPrice$}&lt;/th&gt;
+                &lt;th style="text-align: right; padding-top: 21px;"&gt;{$InvoiceTemplate.Subtotal$}&lt;/th&gt;
+              &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+              {% foreach(item in ContentTable) { %}
+              &lt;tr&gt;
+                &lt;td style="text-align: left;"&gt;{%(item.IsProductOption) ? "&amp;nbsp;&amp;nbsp;&amp;nbsp;" : ""%}{% Localize(item.SKUName)|(encode)true %}
+                  {% (item.CartItemText != "") ? " '" + item.CartItemText + "' " : "" |(encode)true %}
+                  {% item.SKUNumber|(encode)true %}&lt;/td&gt;
+                &lt;td style="text-align: right; vertical-align: top;"&gt;{%(item.IsProductOption &amp;&amp; !item.IsAccessoryProduct) ? "" : item.Units %}&lt;/td&gt;
+                &lt;td style="text-align: right; vertical-align: top;"&gt;{%(item.IsProductOption &amp;&amp; !item.IsAccessoryProduct) ? "" : (item.UnitPrice - item.UnitTotalDiscount).Format(Currency.CurrencyFormatString)|(encode)true %}&lt;/td&gt;
+                &lt;td style="text-align: right; vertical-align: top;"&gt;{%(item.IsProductOption &amp;&amp; !item.IsAccessoryProduct) ? "" : item.TotalPrice.Format(Currency.CurrencyFormatString)|(encode)true %}&lt;/td&gt;
+              &lt;/tr&gt;
+              {% } |(identity)GlobalAdministrator|(hash)caf3aa9efb8d67c1b20df0801e091174edf8572acd500f70c79b5058ea95a59b%}
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+          &lt;hr size="1" /&gt;
+          &lt;table cellpadding="5" width="50%" style="float: right;"&gt;
+            &lt;tbody&gt;
+              &lt;tr&gt;
+                &lt;td&gt;Subtotal&lt;/td&gt;
+                &lt;td style="text-align: right; padding-right: 0px"&gt;{% TotalItemsPrice.Format(Currency.CurrencyFormatString)|(encode)true|(identity)GlobalAdministrator|(hash)7974543756459d6d2f3e1964132cf328874d3908e78c99a4aae48b10cecc96e4%}&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td colspan="2" style="padding: 0; text-align: right;"&gt;
+                  {% if(OrderDiscountSummary.Any()) { %}
+                  &lt;table width="100%" cellspacing="0" cellpadding="0" style="text-align: right; width: 100%;"&gt;
+                    &lt;tbody&gt;
+                      {% foreach(discountItem in OrderDiscountSummary) { %}
+                      &lt;tr&gt;
+                        &lt;td style="padding: 0px 8px 0px 5px; text-align: left;"&gt;{% Localize(discountItem.Name)|(encode)true%}&lt;/td&gt;
+                        &lt;td style="vertical-align: top; text-align: right;"&gt;&amp;#8209;&amp;nbsp;{% discountItem.Value.Format(Currency.CurrencyFormatString)|(encode)true%}&lt;/td&gt;
+                      &lt;/tr&gt;
+                      {% } %}
+                    &lt;/tbody&gt;
+                  &lt;/table&gt;
+                  {% } |(identity)GlobalAdministrator|(hash)f33cd61830b4318e80e8c48b6502164f98b7cb7c834636cac2f043088c39038a%}
+                &lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;Shipping&lt;/td&gt;
+                &lt;td style="text-align: right; padding-right: 0px"&gt;{% TotalShipping.Format(Currency.CurrencyFormatString)|(encode)true |(identity)GlobalAdministrator|(hash)ab1d5d7ef65433e8709b6515e1dce470665e24cf491b96cc58b8059685c58375%}&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td colspan="2" style="padding: 0; text-align: right;"&gt;
+                  {% if(OtherPaymentsSummary.Any()) { %}
+                  &lt;table width="100%" cellspacing="0" cellpadding="0" style="text-align: right; width: 100%;"&gt;
+                    &lt;tbody&gt;
+                      {% foreach(discountItem in OtherPaymentsSummary) { %}
+                      &lt;tr&gt;
+                        &lt;td style="padding: 0px 8px 0px 5px; text-align: left;"&gt;{% Localize(discountItem.Name)|(encode)true%}&lt;/td&gt;
+                        &lt;td style="vertical-align: top; text-align: right;"&gt;&amp;#8209;&amp;nbsp;{% discountItem.Value.Format(Currency.CurrencyFormatString)|(encode)true%}&lt;/td&gt;
+                      &lt;/tr&gt;
+                      {% } %}
+                    &lt;/tbody&gt;
+                  &lt;/table&gt;
+                  {% } |(identity)GlobalAdministrator|(hash)1b1c062b80c5158252a161cea2b3ca73dc3db2d8df5455e16f0492317e7a4344%}
+                &lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;&lt;span style="color:black; font-weight:bold"&gt;TOTAL (incl. tax):&lt;/span&gt;&lt;/td&gt;
+                &lt;td style="text-align: right; padding-right: 0px; color:black; font-weight:bold"&gt;{% GrandTotal.Format(Currency.CurrencyFormatString)|(encode)true|(identity)GlobalAdministrator|(hash)0eeb52b8328876beb7cb67a5312d47733fbf139403272c6ab55f6375de624e06%}&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td colspan="2"&gt;
+          &lt;table width="50%"&gt;
+            &lt;tbody&gt;
+              &lt;tr&gt;
+                &lt;td style="text-align: left; padding: 8px"&gt;&lt;span style="color:black; font-weight:bold"&gt;Tax summary&lt;/span&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td style="text-align: left;"&gt;
+                  {% if(TaxSummary.Any()) { %}
+                  &lt;table width="100%" cellspacing="0" cellpadding="0" style="text-align: right; width: 100%;"&gt;
+                    &lt;tbody&gt;
+                      {% foreach(taxItem in TaxSummary) { %}
+                      &lt;tr&gt;
+                        &lt;td style="padding: 0px 8px 0px 5px; text-align: left;"&gt;{% Localize(taxItem.Name)|(encode)true %}&lt;/td&gt;
+                        &lt;td style="vertical-align: top; text-align: right;"&gt;{% taxItem.Value.Format(Currency.CurrencyFormatString)|(encode)true %}&lt;/td&gt;
+                      &lt;/tr&gt;
+                      {% } %}
+                    &lt;/tbody&gt;
+                  &lt;/table&gt;
+                  {% } |(identity)GlobalAdministrator|(hash)d68ea412357323477fc5fec6ee28249b718e26f598ba746387688ec1b9df5b61%}
+                &lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</EmailTemplateText>
+      <EmailTemplateSiteID>1</EmailTemplateSiteID>
+      <EmailTemplateGUID>5ce83dc9-fd11-4622-a725-0cd1b93192d8</EmailTemplateGUID>
+      <EmailTemplateLastModified>2018-11-27T09:50:24.2064754-06:00</EmailTemplateLastModified>
+      <EmailTemplateType>ecommerce</EmailTemplateType>
+    </cms_emailtemplate>
+    <cms_emailtemplate>
+      <EmailTemplateID>1170</EmailTemplateID>
+      <EmailTemplateName>Ecommerce.OrderStatusNotificationToCustomer</EmailTemplateName>
+      <EmailTemplateDisplayName>E-commerce - Order status notification to customer</EmailTemplateDisplayName>
+      <EmailTemplateText>&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Status of your order has changed.&lt;/h1&gt;
+    &lt;p&gt;The status of your order has changed to '{% Order.OrderStatus.DisplayName|(encode)true |(identity)GlobalAdministrator|(hash)08741c3dca3210ad09d500c78964150bb24f0b430a5b4c113c49f267616c60d2%}'.&lt;/p&gt;
+    &lt;p&gt;
+      Check the &lt;i&gt;E-commerce - Order notification to customer&lt;/i&gt; email template to 
+      see a more complex template example.
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</EmailTemplateText>
+      <EmailTemplateSiteID>1</EmailTemplateSiteID>
+      <EmailTemplateGUID>0dbe6a3d-97de-478a-b1c5-4d69694c5b90</EmailTemplateGUID>
+      <EmailTemplateLastModified>2017-03-03T06:21:59.9936982-06:00</EmailTemplateLastModified>
+      <EmailTemplateType>ecommerce</EmailTemplateType>
+    </cms_emailtemplate>
+    <cms_emailtemplate>
+      <EmailTemplateID>1171</EmailTemplateID>
+      <EmailTemplateName>Ecommerce.OrderStatusNotificationToAdmin</EmailTemplateName>
+      <EmailTemplateDisplayName>E-commerce - Order status notification to administrator</EmailTemplateDisplayName>
+      <EmailTemplateText>&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Order status changed&lt;/h1&gt;
+    &lt;p&gt;The status of an order has changed.&lt;/p&gt;
+    &lt;p&gt;
+      Check the &lt;i&gt;E-commerce - Order notification to customer&lt;/i&gt; email template to 
+      see a more complex template example.
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</EmailTemplateText>
+      <EmailTemplateSiteID>1</EmailTemplateSiteID>
+      <EmailTemplateGUID>7c91c9d6-a8c7-4da7-b75f-51a9f62324dc</EmailTemplateGUID>
+      <EmailTemplateLastModified>2017-03-03T06:21:59.9649883-06:00</EmailTemplateLastModified>
+      <EmailTemplateType>ecommerce</EmailTemplateType>
+    </cms_emailtemplate>
+    <cms_emailtemplate>
+      <EmailTemplateID>1172</EmailTemplateID>
+      <EmailTemplateName>Ecommerce.OrderNotificationToAdmin</EmailTemplateName>
+      <EmailTemplateDisplayName>E-commerce - Order notification to administrator</EmailTemplateDisplayName>
+      <EmailTemplateText>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt; 
+  &lt;h1&gt;New order in your shop&lt;/h1&gt;
+  &lt;p&gt;
+    A new order was created in your shop.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Check the &lt;i&gt;E-commerce - Order notification to customer&lt;/i&gt; email template to 
+    see a more complex template example.
+  &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</EmailTemplateText>
+      <EmailTemplateSiteID>1</EmailTemplateSiteID>
+      <EmailTemplateGUID>4a18990d-3de9-4a68-b248-9707696425af</EmailTemplateGUID>
+      <EmailTemplateLastModified>2017-03-03T06:21:59.8538786-06:00</EmailTemplateLastModified>
+      <EmailTemplateType>ecommerce</EmailTemplateType>
+    </cms_emailtemplate>
+    <cms_emailtemplate>
+      <EmailTemplateID>1173</EmailTemplateID>
+      <EmailTemplateName>Ecommerce.OrderPaymentNotificationToAdmin</EmailTemplateName>
+      <EmailTemplateDisplayName>E-commerce - Order payment notification to administrator</EmailTemplateDisplayName>
+      <EmailTemplateText>&lt;html&gt;
+  &lt;head&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Payment received&lt;/h1&gt;
+    &lt;p&gt;A payment for an order received.&lt;/p&gt;
+    &lt;p&gt;
+      Check the &lt;i&gt;E-commerce - Order notification to customer&lt;/i&gt; email template to 
+      see a more complex template example.
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</EmailTemplateText>
+      <EmailTemplateSiteID>1</EmailTemplateSiteID>
+      <EmailTemplateGUID>37d13f78-abc0-46ff-bc7d-e79220c894a9</EmailTemplateGUID>
+      <EmailTemplateLastModified>2017-03-03T06:21:59.9154556-06:00</EmailTemplateLastModified>
+      <EmailTemplateType>ecommerce</EmailTemplateType>
+    </cms_emailtemplate>
+  </NewDataSet>
+</cms_emailtemplate>

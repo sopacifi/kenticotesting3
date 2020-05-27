@@ -1,0 +1,22 @@
+﻿<ecommerce_department version="12.0">
+  <NewDataSet>
+    <com_department>
+      <DepartmentID>1</DepartmentID>
+      <DepartmentName>DancingGoatMvc.Brewers</DepartmentName>
+      <DepartmentDisplayName>Brewers</DepartmentDisplayName>
+      <DepartmentDefaultTaxClassID>1</DepartmentDefaultTaxClassID>
+      <DepartmentGUID>3674002a-de5d-41de-9592-2fa18d1a469d</DepartmentGUID>
+      <DepartmentLastModified>2017-03-03T06:18:53.5470239-06:00</DepartmentLastModified>
+      <DepartmentSiteID>1</DepartmentSiteID>
+    </com_department>
+    <com_department>
+      <DepartmentID>2</DepartmentID>
+      <DepartmentName>DancingGoatMvc.Coffees</DepartmentName>
+      <DepartmentDisplayName>Coffees</DepartmentDisplayName>
+      <DepartmentDefaultTaxClassID>1</DepartmentDefaultTaxClassID>
+      <DepartmentGUID>4cdecf87-75d0-429b-b502-f680d44a69dc</DepartmentGUID>
+      <DepartmentLastModified>2017-03-03T06:18:53.5550207-06:00</DepartmentLastModified>
+      <DepartmentSiteID>1</DepartmentSiteID>
+    </com_department>
+  </NewDataSet>
+</ecommerce_department>
